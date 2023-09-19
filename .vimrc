@@ -1,3 +1,11 @@
+" suggestion window navigate
+inoremap <C-J> <C-N>
+inoremap <C-K> <C-P>
+
+" arrow key to switch tab
+nnoremap <C-Left> gT
+nnoremap <C-Right> gt
+
 colorscheme atlas
 
 " vim 退出时不清空剪贴板
