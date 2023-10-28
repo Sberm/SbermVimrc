@@ -58,12 +58,7 @@ set mouse=a
 " a tab is <length of doing shiftwidth> % <tabstop>
 set autoindent
 set tabstop=8  " how many columns count as a tab(\t).
-set shiftwidth=16 " how many columns to shift when a TAB key is pressed
-
-set list
-"set softtabstop=-1
-"set tabstop=8
-"set shiftwidth=8
+set shiftwidth=8 " how many columns to shift when a TAB key is pressed
 
 " 命令菜单
 set wildmenu
