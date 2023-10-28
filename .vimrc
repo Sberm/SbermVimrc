@@ -1,3 +1,12 @@
+" 关闭自动注释
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" <C-X>被tmux吃掉了, <C-D>代替
+vnoremap <C-D> <C-X>
+
+" quick yank all
+nnoremap <C-Y> :%y*<CR>
+
 " suggestion window navigate
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
@@ -6,13 +15,14 @@ inoremap <C-K> <C-P>
 nnoremap <C-Left> gT
 nnoremap <C-Right> gt
 
-colorscheme atlas
+"colorscheme atlas
+colorscheme lucius
 
 " vim 退出时不清空剪贴板
-autocmd VimLeave * call system("xsel -ib", getreg('+'))
+" autocmd VimLeave * call system("xsel -ib", getreg('+'))
 
 " encoding
-set bomb
+"set bomb
 set fileencoding=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -45,9 +55,15 @@ set nowrap
 set mouse=a
 
 " auto indentation
+" a tab is <length of doing shiftwidth> % <tabstop>
 set autoindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=8  " how many columns count as a tab(\t).
+set shiftwidth=16 " how many columns to shift when a TAB key is pressed
+
+set list
+"set softtabstop=-1
+"set tabstop=8
+"set shiftwidth=8
 
 " 命令菜单
 set wildmenu
@@ -117,13 +133,12 @@ function! NoRg()
 	echo "Don't use Rg, use RG instead!"
 endfunction
 
-
 " end fzf
 
 " toggle自动注释
 nnoremap <S-C> :call ToggleComment()<CR>
 function! ToggleComment()
-	if &formatoptions != 'ql'
+	if stridx(&formatoptions, 'c') != -1
 		set formatoptions-=cro
 		echo "Auto comment OFF"
 	else
@@ -131,12 +146,6 @@ function! ToggleComment()
 		echo "Auto comment ON"
 	endif
 endfunction
-
-
-
-" 关闭自动注释
-
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
 " toggle undo tree
