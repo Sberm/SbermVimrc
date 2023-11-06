@@ -1,3 +1,4 @@
+
 " 关闭自动注释
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -25,7 +26,6 @@ colorscheme lucius
 "set bomb
 set fileencoding=utf-8
 set encoding=utf-8
-set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 
 " quick safe
@@ -57,8 +57,8 @@ set mouse=a
 " auto indentation
 " a tab is <length of doing shiftwidth> % <tabstop>
 set autoindent
-set tabstop=8  " how many columns count as a tab(\t).
-set shiftwidth=8 " how many columns to shift when a TAB key is pressed
+set tabstop=4  " how many columns count as a tab(\t).
+set shiftwidth=4 " how many columns to shift when a TAB key is pressed
 
 " 命令菜单
 set wildmenu
