@@ -1,4 +1,3 @@
-
 " 关闭自动注释
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -79,8 +78,6 @@ set showmatch   " 开启高亮显示匹配括号
 set autoread    " 自动加载改动的文件
 
 " map quick yank
-"noremap <S-Y> :%y*<CR>
-"noremap <S-Y> "*y<CR>
 noremap <S-Y> "+y<CR>
 
 " set mouse toggle
