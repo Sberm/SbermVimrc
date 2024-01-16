@@ -1,3 +1,5 @@
+" some
+
 " 关闭自动注释
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
