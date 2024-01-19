@@ -1,5 +1,5 @@
 " 行首行尾
-noremap <S-A> ^
+noremap <S-S> ^
 noremap <S-D> $
 
 " 关闭自动注释
@@ -114,14 +114,17 @@ nnoremap <Leader>r :%s///g<Left><Left>
 
 " ctrl-p切换preview window
 let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['hidden', 'ctrl-p'] " 默认关闭, ctrl-p切换
+let g:fzf_vim.preview_window = ['','ctrl-p'] " 默认关闭, ctrl-p切换
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
 
 " open file
 nnoremap <silent> <C-P> :Files<CR>
 
 " search file
-nnoremap <silent> <C-F> :BLines<CR>
+" nnoremap <silent> <C-F> :BLines<CR>
+
+" ctrl-f grep
+nnoremap <silent> <C-F> :RG<CR>
 
 " 不使用Rg(会grep文件名，不好用)
 command! -bang Rg call NoRg()
