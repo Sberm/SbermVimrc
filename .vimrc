@@ -1,4 +1,6 @@
-" some
+" 行首行尾
+noremap <S-A> ^
+noremap <S-D> $
 
 " 关闭自动注释
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
