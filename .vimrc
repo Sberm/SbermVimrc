@@ -31,10 +31,6 @@ set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
 
-" quick safe
-nnoremap S :w<CR>
-nnoremap Q :q<CR>
-
 " syntax highlighting 
 syntax on
 
