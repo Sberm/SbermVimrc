@@ -1,3 +1,12 @@
+" easy-align plugin
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+" custom delimiter quotation mark
+let g:easy_align_delimiters = {
+\ 	'"': { 'pattern': '"', 'ignore_groups': ['Comment'] }
+\ }
+
 " 行首行尾
 noremap <S-S> ^
 noremap <S-D> $
@@ -207,6 +216,7 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'huyvohcmc/atlas.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
