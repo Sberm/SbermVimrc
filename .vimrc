@@ -2,7 +2,7 @@
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" custom delimiter quotation mark
+" quotation mark as delimiter
 let g:easy_align_delimiters = {
 \ 	'"': { 'pattern': '"', 'ignore_groups': ['Comment'] }
 \ }
