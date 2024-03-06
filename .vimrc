@@ -53,6 +53,8 @@ nmap , @:
 set backspace=indent,eol,start
 
 set hlsearch
+" 搜索时不区分大小写
+set ignorecase
 set ruler
 set number
 
@@ -75,8 +77,8 @@ set wildmenu
 "quick h j k l
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
-nnoremap <C-H> 10h
-nnoremap <C-L> 10l
+nnoremap <C-H> 2h
+nnoremap <C-L> 2l
 
 vnoremap <C-j> 5j
 vnoremap <C-k> 5k
