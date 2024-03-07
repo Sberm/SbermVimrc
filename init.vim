@@ -1,14 +1,6 @@
 " add header automatically when a .c file is created
 au BufNewFile *.c,*.h,*.cpp call Headerr()
 
-"/** @brief
- "*  
- "*  
- "*  
- "*  @param
- "*  @param
- "*  @return
- "*/
 " insert function comment
 function! Funcc()
 	:.-1read ~/.funccmt
