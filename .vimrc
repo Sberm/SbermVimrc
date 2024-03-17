@@ -4,7 +4,8 @@ nmap ga <Plug>(EasyAlign)
 
 " quotation mark as delimiter
 let g:easy_align_delimiters = {
-\ 	'"': { 'pattern': '"', 'ignore_groups': ['Comment'] }
+\ 	'"': { 'pattern': '"', 'ignore_groups': ['Comment'] },
+\ 	'\': { 'pattern': '\\', }
 \ }
 
 " 行首行尾
@@ -121,7 +122,7 @@ nnoremap <Leader>r :%s///g<Left><Left>
 
 " ctrl-p切换preview window
 let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['','ctrl-p'] " 默认关闭, ctrl-p切换
+let g:fzf_vim.preview_window = ['hidden','ctrl-p'] " 默认关闭, ctrl-p切换
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
 
 " open file
