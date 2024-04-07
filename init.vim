@@ -52,3 +52,6 @@ call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
+
+" all modes in block
+set guicursor=n-v-c-sm-i-ci-ve-r-cr-o:block

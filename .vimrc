@@ -1,9 +1,3 @@
-" emacs
-inoremap <C-P> <Up>
-inoremap <C-N> <Down>
-inoremap <C-B> <Left>
-inoremap <C-F> <Right>
-
 " easy-align plugin
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -230,3 +224,14 @@ Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 filetype plugin indent on    " required 
+
+" emacs key bindings (put at the bottom because of C-K)
+inoremap <C-P> <Up>
+inoremap <C-N> <Down>
+inoremap <C-B> <Left>
+inoremap <C-F> <Right>
+inoremap <C-E> <Esc>A
+inoremap <C-A> <Esc>I
+inoremap <C-_> <Esc>ui "C-/
+inoremap <C-R> <Esc><C-R>i
+inoremap <C-K> <Esc>d$i
