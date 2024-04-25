@@ -235,3 +235,4 @@ inoremap <C-A> <Esc>I
 inoremap <C-_> <Esc>ui "C-/
 inoremap <C-R> <Esc><C-R>i
 inoremap <C-K> <Esc>d$i
+inoremap <C-D> <Esc>lxi
