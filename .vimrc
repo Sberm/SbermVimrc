@@ -68,8 +68,8 @@ set mouse=a
 " auto indentation
 " a tab is <length of doing shiftwidth> % <tabstop>
 set autoindent
-set tabstop=8  " how many columns count as a tab(\t).
-set shiftwidth=8 " how many columns to shift when a TAB key is pressed
+set tabstop=4  " how many columns count as a tab(\t).
+set shiftwidth=4 " how many columns to shift when a TAB key is pressed
 
 " 命令菜单
 set wildmenu
@@ -236,3 +236,4 @@ inoremap <C-_> <Esc>ui "C-/
 inoremap <C-R> <Esc><C-R>i
 inoremap <C-K> <Esc>d$i
 inoremap <C-D> <Esc>lxi
+inoremap <C-Y> <Esc>pi

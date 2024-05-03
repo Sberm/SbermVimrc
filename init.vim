@@ -38,20 +38,5 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
-" Required:
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-NeoBundleCheck
-
 " all modes in block
 set guicursor=n-v-c-sm-i-ci-ve-r-cr-o:block
