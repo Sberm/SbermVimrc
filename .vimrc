@@ -41,9 +41,6 @@ set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
 
-" syntax highlighting 
-syntax on
-
 " 高亮当前行
 set cursorline
 
@@ -237,3 +234,6 @@ inoremap <C-R> <Esc><C-R>i
 inoremap <C-K> <Esc>d$i
 inoremap <C-D> <Esc>lxi
 inoremap <C-Y> <Esc>pi
+
+" syntax highlighting 
+syntax off
