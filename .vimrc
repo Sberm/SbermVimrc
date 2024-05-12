@@ -236,4 +236,4 @@ inoremap <C-D> <Esc>lxi
 inoremap <C-Y> <Esc>pi
 
 " syntax highlighting 
-syntax off
+syntax on
