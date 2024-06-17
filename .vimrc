@@ -231,7 +231,7 @@ inoremap <C-E> <Esc>A
 inoremap <C-A> <Esc>I
 inoremap <C-_> <Esc>ui "C-/
 inoremap <C-R> <Esc><C-R>i
-inoremap <C-K> <Esc>d$i
+inoremap <C-K> <Esc>ld$i
 inoremap <C-D> <Esc>lxi
 inoremap <C-Y> <Esc>pi
 

@@ -19,3 +19,5 @@ source ~/.vimrc
 
 " all modes in block
 set guicursor=n-v-c-sm-i-ci-ve-r-cr-o:block
+
+let g:python_recommended_style=0
