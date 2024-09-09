@@ -1,3 +1,6 @@
+" disable C-X for tmux
+map <C-X> <Nop>
+
 " easy-align plugin
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -28,9 +31,6 @@ inoremap <C-K> <C-P>
 " arrow key to switch tab
 nnoremap <C-Left> gT
 nnoremap <C-Right> gt
-
-"colorscheme atlas
-colorscheme lucius
 
 " vim 退出时不清空剪贴板
 " autocmd VimLeave * call system("xsel -ib", getreg('+'))
@@ -207,6 +207,8 @@ Plugin 'MattesGroeger/vim-bookmarks'
 " undotree
 Plugin 'mbbill/undotree'
 
+Plugin 'jonathanfilip/vim-lucius'
+
 call vundle#end()
 
  "vim plug
@@ -237,3 +239,6 @@ inoremap <C-Y> <Esc>pi
 
 " syntax highlighting 
 syntax on
+
+"colorscheme atlas
+colorscheme lucius
