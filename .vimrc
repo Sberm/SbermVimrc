@@ -24,7 +24,7 @@ vnoremap <C-D> <C-X>
 " quick yank all
 nnoremap <C-Y> :%y*<CR>
 
-" suggestion window navigate
+" fuzzy suggest window navigate
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
@@ -73,8 +73,8 @@ set wildmenu
 " set wildoptions=pum
 
 "quick h j k l
-nnoremap <C-j> 5j
-nnoremap <C-k> 5k
+nnoremap <C-j> 4j
+nnoremap <C-k> 4k
 nnoremap <C-H> 2h
 nnoremap <C-L> 2l
 
@@ -123,13 +123,13 @@ let g:fzf_vim.preview_window = ['hidden','ctrl-p'] " 默认关闭, ctrl-p切换
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
 
 " open file
-nnoremap <silent> <C-P> :Files<CR>
+nnoremap <silent> <S-P> :Files<CR>
 
 " search file
 " nnoremap <silent> <C-F> :BLines<CR>
 
 " ctrl-f grep
-nnoremap <silent> <C-F> :RG<CR>
+nnoremap <silent> <S-F> :RG<CR>
 
 " 不使用Rg(会grep文件名，不好用)
 command! -bang Rg call NoRg()
@@ -161,8 +161,8 @@ vnoremap > >gv
 
 " quick comment
 
-nmap <S-F> \ci 
-vmap <S-F> \cigv
+nmap <S-C> \ci
+vmap <S-C> \cigv
 
 " NERDTree
 map <C-B> :NERDTreeToggle<CR>   
@@ -225,10 +225,10 @@ call plug#end()
 filetype plugin indent on    " required 
 
 " emacs key bindings (put at the bottom because of C-K)
-inoremap <C-P> <Up>
-inoremap <C-N> <Down>
-inoremap <C-B> <Left>
-inoremap <C-F> <Right>
+noremap <C-P> <Up>
+noremap <C-N> <Down>
+noremap <C-B> <Left>
+noremap <C-F> <Right>
 inoremap <C-E> <Esc>A
 inoremap <C-A> <Esc>I
 inoremap <C-_> <Esc>ui "C-/
