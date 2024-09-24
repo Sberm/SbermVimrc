@@ -216,11 +216,16 @@ noremap <C-P> <Up>
 noremap <C-N> <Down>
 noremap <C-B> <Left>
 noremap <C-F> <Right>
+noremap <C-E> $
+noremap <C-A> ^
+noremap <C-K> d$
+" I don't do the line below because I want pagedown
+" noremap <C-D> <Esc>lxi
+
 inoremap <C-P> <Up>
 inoremap <C-N> <Down>
 inoremap <C-B> <Left>
 inoremap <C-F> <Right>
-
 inoremap <C-E> <Esc>A
 inoremap <C-A> <Esc>I
 inoremap <C-_> <Esc>ui "C-/
