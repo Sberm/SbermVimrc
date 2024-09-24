@@ -1,5 +1,5 @@
 " disable C-X for tmux
-map <C-X> <Nop>
+noremap <C-X> <Nop>
 
 " easy-align plugin
 xmap ga <Plug>(EasyAlign)
@@ -11,15 +11,12 @@ let g:easy_align_delimiters = {
 \ 	'\': { 'pattern': '\\', }
 \ }
 
-" 行首行尾
+" jump to line start/end
 noremap <S-S> ^
 noremap <S-D> $
 
-" 关闭自动注释
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" <C-X>被tmux吃掉了, <C-D>代替
-vnoremap <C-D> <C-X>
+" disable auto commenting
+autocmd FileType * setlocal formatoptions-=cro
 
 " quick yank all
 nnoremap <C-Y> :%y*<CR>
@@ -32,34 +29,28 @@ inoremap <C-K> <C-P>
 nnoremap <C-Left> gT
 nnoremap <C-Right> gt
 
-" vim 退出时不清空剪贴板
-" autocmd VimLeave * call system("xsel -ib", getreg('+'))
-
 " encoding
 "set bomb
 set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
 
-" 高亮当前行
+" highlight current line
 set cursorline
 
-" ,重复命令行命令(和normal结合使用)
+" use , to duplicate command-line commands (use it with normal)
 nmap , @:
 
 " fix backspace not working
 set backspace=indent,eol,start
 
 set hlsearch
-" 搜索时不区分大小写
 set ignorecase
 set ruler
 set number
 
-" 单行无限延伸
 set nowrap
 
-" 使用鼠标
 set mouse=a
 
 " auto indentation
@@ -68,11 +59,9 @@ set autoindent
 set tabstop=8  " how many columns count as a tab(\t).
 set shiftwidth=8 " how many columns to shift when a TAB key is pressed
 
-" 命令菜单
 set wildmenu
-" set wildoptions=pum
 
-"quick h j k l
+" quick h j k l
 nnoremap <C-j> 4j
 nnoremap <C-k> 4k
 nnoremap <C-H> 2h
@@ -83,11 +72,12 @@ vnoremap <C-k> 5k
 vnoremap <C-H> 10h
 vnoremap <C-L> 10l
 
-set showmatch   " 开启高亮显示匹配括号
-set autoread    " 自动加载改动的文件
+" match parenthesis
+set showmatch
+set autoread
 
 " map quick yank
-noremap <S-Y> "+y<CR>
+noremap <S-Y> "+y
 
 " set mouse toggle
 nnoremap <S-W> :call ToggleMouse()<CR>
@@ -112,26 +102,23 @@ function! ToggleWrap()
 	endif
 endfunction
 
-" 查找替换(先按*)
+" find and replace (press * first)
 nnoremap <Leader>r :%s///g<Left><Left>
 
 " fzf
 
-" ctrl-p切换preview window
+" ctrl-p to toggle preview window
 let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['hidden','ctrl-p'] " 默认关闭, ctrl-p切换
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
+let g:fzf_vim.preview_window = ['hidden','ctrl-p']
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
 
-" open file
-nnoremap <silent> <S-P> :Files<CR>
+" ctrl-e search file (Ctrl-Entry)
+nnoremap <silent> <C-E> :Files<CR>
 
-" search file
-" nnoremap <silent> <C-F> :BLines<CR>
+" ctrl-s search
+nnoremap <silent> <C-S> :RG<CR>
 
-" ctrl-f grep
-nnoremap <silent> <S-F> :RG<CR>
-
-" 不使用Rg(会grep文件名，不好用)
+" Disable :Rg
 command! -bang Rg call NoRg()
 function! NoRg()
 	echo "Don't use Rg, use RG instead!"
@@ -139,7 +126,7 @@ endfunction
 
 " end fzf
 
-" toggle自动注释
+" toggle auto command
 nnoremap <S-C> :call ToggleComment()<CR>
 function! ToggleComment()
 	if stridx(&formatoptions, 'c') != -1
@@ -161,11 +148,11 @@ vnoremap > >gv
 
 " quick comment
 
-nmap <S-C> \ci
-vmap <S-C> \cigv
+nmap <S-F> \ci
+vmap <S-F> \cigv
 
 " NERDTree
-map <C-B> :NERDTreeToggle<CR>   
+noremap <S-B> :NERDTreeToggle<CR>   
 
 " don't know if this works or not. for scrolling
 noremap <ScrollWheelDown><ScrollWheelUp> <ScrollWheelDown>
@@ -222,13 +209,18 @@ Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
-filetype plugin indent on    " required 
+filetype plugin indent on
 
 " emacs key bindings (put at the bottom because of C-K)
 noremap <C-P> <Up>
 noremap <C-N> <Down>
 noremap <C-B> <Left>
 noremap <C-F> <Right>
+inoremap <C-P> <Up>
+inoremap <C-N> <Down>
+inoremap <C-B> <Left>
+inoremap <C-F> <Right>
+
 inoremap <C-E> <Esc>A
 inoremap <C-A> <Esc>I
 inoremap <C-_> <Esc>ui "C-/
