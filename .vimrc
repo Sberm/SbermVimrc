@@ -218,9 +218,7 @@ noremap <C-B> <Left>
 noremap <C-F> <Right>
 noremap <C-E> $
 noremap <C-A> ^
-noremap <C-K> d$
-" I don't do the line below because I want pagedown
-" noremap <C-D> <Esc>lxi
+" no c-k and c-d for normal
 
 inoremap <C-P> <Up>
 inoremap <C-N> <Down>
