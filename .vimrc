@@ -113,7 +113,7 @@ let g:fzf_vim.preview_window = ['hidden','ctrl-p']
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
 
 " ctrl-e search file (Ctrl-Entry)
-nnoremap <silent> <C-E> :Files<CR>
+nnoremap <silent> <Leader>f :Files<CR>
 
 " ctrl-s search
 nnoremap <silent> <C-S> :RG<CR>
