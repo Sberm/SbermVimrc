@@ -1,3 +1,9 @@
+" paste without yanking the deleted text
+vnoremap p P
+
+" yanking, deleting, and pasting use the system clipboard by default.
+" set clipboard^=unnamed
+
 " disable C-X for tmux
 noremap <C-X> <Nop>
 
