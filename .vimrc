@@ -1,3 +1,13 @@
+set relativenumber
+nnoremap <silent> <S-L> :call ToggleRelativeNumber()<CR>
+function! ToggleRelativeNumber()
+    if &relativenumber == 1
+	set norelativenumber
+    else
+	set relativenumber
+    endif
+endfunction
+
 " paste without yanking the deleted text
 vnoremap p P
 
@@ -85,7 +95,6 @@ set autoread
 " map quick yank
 noremap <S-Y> "+y
 
-" set mouse toggle
 nnoremap <S-W> :call ToggleMouse()<CR>
 function! ToggleMouse()
     if &mouse == 'a'
