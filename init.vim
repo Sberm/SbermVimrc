@@ -1,23 +1,30 @@
-" add header automatically when a .c file is created
+" Add header automatically when a .c file is created
 au BufNewFile *.c,*.h,*.cpp call Headerr()
 
-" insert function comment
-function! Funcc()
+" Insert function comment
+function! FuncComment()
 	:.-1read ~/.funccmt
 endfunction
-:command Funcc :call Funcc()
+:command Fc :call FuncComment()
 
-function! Headerr()
+" Insert a comment template
+function! Comment()
+	:.-1read ~/.cmt
+endfunction
+:command C :call Comment()
+
+" Insert license header
+function! Hd()
 	:.-1read ~/.headerr
 endfunction
 :command Headerr :call Headerr()
 
-" crap that I don't understand
+" Crap that I don't understand
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
-" all modes in block
+" All modes in block
 set guicursor=n-v-c-sm-i-ci-ve-r-cr-o:block
 
 let g:python_recommended_style=0
