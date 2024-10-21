@@ -1,3 +1,6 @@
+" indent cpp with 2 spaces
+autocmd FileType cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
 set relativenumber
 nnoremap <silent> <S-L> :call ToggleRelativeNumber()<CR>
 function! ToggleRelativeNumber()
@@ -78,13 +81,13 @@ set shiftwidth=8 " how many columns to shift when a TAB key is pressed
 set wildmenu
 
 " quick h j k l
-nnoremap <C-j> 4j
-nnoremap <C-k> 4k
+nnoremap <C-J> 4j
+nnoremap <C-K> 4k
 nnoremap <C-H> 2h
 nnoremap <C-L> 2l
 
-vnoremap <C-j> 5j
-vnoremap <C-k> 5k
+vnoremap <C-J> 5j
+vnoremap <C-K> 5k
 vnoremap <C-H> 10h
 vnoremap <C-L> 10l
 
@@ -241,11 +244,10 @@ inoremap <C-B> <Left>
 inoremap <C-F> <Right>
 inoremap <C-E> <Esc>A
 inoremap <C-A> <Esc>I
-inoremap <C-_> <Esc>ui "C-/
+inoremap <C-_> <Esc>ui " <C-/> redo
 inoremap <C-R> <Esc><C-R>i
-inoremap <C-K> <Esc>ld$i
-inoremap <C-D> <Esc>lxi
-inoremap <C-Y> <Esc>pi
+inoremap <C-K> <Right><Esc>d$
+inoremap <C-D> <Right><backspace>
 
 " syntax highlighting 
 syntax on
