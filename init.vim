@@ -14,10 +14,10 @@ endfunction
 :command C :call Comment()
 
 " Insert license header
-function! Hd()
+function! Headerr()
 	:.-1read ~/.headerr
 endfunction
-:command Headerr :call Headerr()
+:command Hd :call Headerr()
 
 " Crap that I don't understand
 set runtimepath^=~/.vim runtimepath+=~/.vim/after

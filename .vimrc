@@ -1,3 +1,7 @@
+" next match centered
+nmap n nzz
+nmap N Nzz
+
 " indent cpp with 2 spaces
 autocmd FileType cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
@@ -79,17 +83,6 @@ set tabstop=8  " how many columns count as a tab(\t).
 set shiftwidth=8 " how many columns to shift when a TAB key is pressed
 
 set wildmenu
-
-" quick h j k l
-nnoremap <C-J> 4j
-nnoremap <C-K> 4k
-nnoremap <C-H> 2h
-nnoremap <C-L> 2l
-
-vnoremap <C-J> 5j
-vnoremap <C-K> 5k
-vnoremap <C-H> 10h
-vnoremap <C-L> 10l
 
 " match parenthesis
 set showmatch
