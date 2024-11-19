@@ -1,3 +1,6 @@
+" emacs save
+inoremap <C-X><C-S> <Esc>:w<CR>i
+
 " next match centered
 nmap n nzz
 nmap N Nzz
