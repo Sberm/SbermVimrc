@@ -1,3 +1,6 @@
+" \-g: rg the word under the cursor
+nnoremap <leader>g :exe "RG " . expand("<cWORD>")<cr>
+
 " emacs save
 inoremap <C-X><C-S> <Esc>:w<CR>i
 
