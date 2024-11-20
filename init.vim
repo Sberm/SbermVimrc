@@ -1,3 +1,6 @@
+" rust
+lua require'lspconfig'.rust_analyzer.setup({})
+
 " Add header automatically when a .c file is created
 au BufNewFile *.c,*.h,*.cpp call Headerr()
 
