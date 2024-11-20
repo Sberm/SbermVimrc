@@ -4,6 +4,12 @@ nnoremap <leader>g :exe "RG " . expand("<cWORD>")<cr>
 " emacs save
 inoremap <C-X><C-S> <Esc>:w<CR>i
 
+" neovim assumes all header files are of filetype cpp, set it back to c
+augroup project
+  autocmd!
+  autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+augroup END
+
 " next match centered
 nmap n nzz
 nmap N Nzz
