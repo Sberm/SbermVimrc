@@ -1,14 +1,46 @@
+" vim plug
+call plug#begin()
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'jonathanfilip/vim-lucius'
+call plug#end()
+
+" need to be after vim plug
+colorscheme lucius
+
+" syntax highlighting
+syntax on
+
+" Add header automatically when a .c file is created
+au BufNewFile *.c,*.h,*.cpp call Headerr()
+
+" Insert function comment
+function! FuncComment()
+	:.-1read ~/.funccmt
+endfunction
+:command Fc :call FuncComment()
+
+" Insert a comment template
+function! Comment()
+	:.-1read ~/.cmt
+endfunction
+:command C :call Comment()
+
+" Insert license header
+function! Hd()
+	:.-1read ~/.headerr
+endfunction
+:command Headerr :call Headerr()
+
+" All modes in block
+" set guicursor=n-v-c-sm-i-ci-ve-r-cr-o:block
+
 " \-g: rg the word under the cursor
 nnoremap <leader>g :exe "RG " . expand("<cWORD>")<cr>
 
 " emacs save
 inoremap <C-X><C-S> <Esc>:w<CR>i
-
-" neovim assumes all header files are of filetype cpp, set it back to c
-augroup project
-  autocmd!
-  autocmd BufRead,BufNewFile *.h,*.c set filetype=c
-augroup END
 
 " next match centered
 nmap n nzz
@@ -30,21 +62,8 @@ endfunction
 " paste without yanking the deleted text
 vnoremap p P
 
-" yanking, deleting, and pasting use the system clipboard by default.
-" set clipboard^=unnamed
-
 " disable C-X for tmux
 noremap <C-X> <Nop>
-
-" easy-align plugin
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-" quotation mark as delimiter
-let g:easy_align_delimiters = {
-\ 	'"': { 'pattern': '"', 'ignore_groups': ['Comment'] },
-\ 	'\': { 'pattern': '\\', }
-\ }
 
 " jump to line start/end
 noremap <S-S> ^
@@ -128,27 +147,6 @@ endfunction
 " find and replace (press * first)
 nnoremap <Leader>r :%s///g<Left><Left>
 
-" fzf
-
-" ctrl-p to toggle preview window
-let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['hidden','ctrl-p']
-let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
-
-" ctrl-e search file (Ctrl-Entry)
-nnoremap <silent> <Leader>f :Files<CR>
-
-" ctrl-s search
-nnoremap <silent> <C-S> :RG<CR>
-
-" Disable :Rg
-command! -bang Rg call NoRg()
-function! NoRg()
-	echo "Don't use Rg, use RG instead!"
-endfunction
-
-" end fzf
-
 " toggle auto command
 nnoremap <S-C> :call ToggleComment()<CR>
 function! ToggleComment()
@@ -161,78 +159,9 @@ function! ToggleComment()
 	endif
 endfunction
 
-
-" toggle undo tree
-nnoremap <F5> :UndotreeToggle<CR>
-
 " indenting while not losing visual selection
 vnoremap < <gv
 vnoremap > >gv
-
-" quick comment
-
-nmap <S-F> \ci
-vmap <S-F> \cigv
-
-" NERDTree
-noremap <S-B> :NERDTreeToggle<CR>   
-
-" don't know if this works or not. for scrolling
-noremap <ScrollWheelDown><ScrollWheelUp> <ScrollWheelDown>
-noremap <ScrollWheelUp><ScrollWheelUp> <ScrollWheelUp>
-
-"vundle below:"
-
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-let g:vim_markdown_folding_style_pythonic = 1
-set conceallevel=2
-let g:vim_markdown_new_list_item_indent = 2
-
-
-call vundle#begin()
-
-Plugin 'terryma/vim-expand-region'
-
-Plugin 'morhetz/gruvbox'
-
-Plugin 'preservim/nerdcommenter'
-
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'preservim/nerdtree'
-
-" auto noh
-Plugin 'haya14busa/is.vim'
-
-" search with visual selections
-Plugin 'nelstrom/vim-visual-star-search'
-
-" bookmark
-Plugin 'MattesGroeger/vim-bookmarks'
-
-" undotree
-Plugin 'mbbill/undotree'
-
-Plugin 'jonathanfilip/vim-lucius'
-
-call vundle#end()
-
- "vim plug
-call plug#begin()
-
-Plug '~/.fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'huyvohcmc/atlas.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/vim-easy-align'
-
-call plug#end()
-
-filetype plugin indent on
 
 " emacs key bindings (put at the bottom because of C-K)
 noremap <C-P> <Up>
@@ -254,8 +183,33 @@ inoremap <C-R> <Esc><C-R>i
 inoremap <C-K> <Right><Esc>d$
 inoremap <C-D> <Right><backspace>
 
-" syntax highlighting 
-syntax on
+" ==== fzf start ====
 
-"colorscheme atlas
-colorscheme lucius
+" ctrl-p to toggle preview window
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = ['hidden','ctrl-p']
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
+
+" ctrl-e search file (Ctrl-Entry)
+nnoremap <silent> <Leader>f :Files<CR>
+
+" ctrl-s search
+nnoremap <silent> <C-S> :RG<CR>
+
+" Disable :Rg
+command! -bang Rg call NoRg()
+function! NoRg()
+	echo "Don't use Rg, use RG instead!"
+endfunction
+
+" ==== fzf end ====
+
+" easy-align plugin
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+" quotation mark as delimiter
+let g:easy_align_delimiters = {
+\ 	'"': { 'pattern': '"', 'ignore_groups': ['Comment'] },
+\ 	'\': { 'pattern': '\\', }
+\ }
