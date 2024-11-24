@@ -165,6 +165,8 @@ nnoremap <silent> <Leader>f :Files<CR>
 
 " ctrl-s search
 nnoremap <silent> <C-S> :RG<CR>
+" <M-S> in insert mode
+inoremap <silent> ß <C-O>:RG<CR>
 
 " Disable :Rg
 command! -bang Rg call NoRg()
