@@ -1,13 +1,31 @@
-" vim plug
-call plug#begin()
-Plug '~/.fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'jonathanfilip/vim-lucius'
-call plug#end()
+" emacs key bindings (put at the bottom because of C-K)
+noremap <C-P> <Up>
+noremap <C-N> <Down>
+noremap <C-B> <Left>
+noremap <C-F> <Right>
+noremap <C-E> $
+noremap <C-A> ^
+" no c-k and c-d for normal
 
-" need to be after vim plug
-colorscheme lucius
+" on mac, use it with "Use Option as Meta Key" OFF, unfortunately it breaks emacs
+" <M-F>
+inoremap ƒ <Right><Esc>wi
+" <M-B>
+inoremap ∫ <Right><Esc>bi
+inoremap <C-P> <Up>
+inoremap <C-N> <Down>
+inoremap <C-B> <Left>
+inoremap <C-F> <Right>
+inoremap <C-E> <Esc>A
+inoremap <C-A> <Esc>I
+inoremap <C-_> <Esc>ui " <C-/> redo
+inoremap <C-R> <Esc><C-R>i
+inoremap <C-K> <Right><Esc>d$
+" instead of C-D
+inoremap <C-X> <Right><backspace>
+" scroll half page
+inoremap <C-U> <Esc><C-U>zzi
+inoremap <C-D> <Esc><C-D>zzi
 
 " syntax highlighting
 syntax on
@@ -163,25 +181,13 @@ endfunction
 vnoremap < <gv
 vnoremap > >gv
 
-" emacs key bindings (put at the bottom because of C-K)
-noremap <C-P> <Up>
-noremap <C-N> <Down>
-noremap <C-B> <Left>
-noremap <C-F> <Right>
-noremap <C-E> $
-noremap <C-A> ^
-" no c-k and c-d for normal
-
-inoremap <C-P> <Up>
-inoremap <C-N> <Down>
-inoremap <C-B> <Left>
-inoremap <C-F> <Right>
-inoremap <C-E> <Esc>A
-inoremap <C-A> <Esc>I
-inoremap <C-_> <Esc>ui " <C-/> redo
-inoremap <C-R> <Esc><C-R>i
-inoremap <C-K> <Right><Esc>d$
-inoremap <C-D> <Right><backspace>
+" vim plug
+call plug#begin()
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'jonathanfilip/vim-lucius'
+call plug#end()
 
 " ==== fzf start ====
 
@@ -213,3 +219,6 @@ let g:easy_align_delimiters = {
 \ 	'"': { 'pattern': '"', 'ignore_groups': ['Comment'] },
 \ 	'\': { 'pattern': '\\', }
 \ }
+
+" need to be after vim plug
+colorscheme lucius
