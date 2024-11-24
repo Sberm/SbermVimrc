@@ -2,11 +2,17 @@
 nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz
 
+" next match centered
+nmap n nzz
+nmap N Nzz
+
 " syntax highlighting
 syntax on
 
 " Add header automatically when a .c file is created
 au BufNewFile *.c,*.h,*.cpp call Headerr()
+" indent cpp with 2 spaces
+autocmd FileType cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " Insert function comment
 function! FuncComment()
@@ -26,19 +32,6 @@ function! Hd()
 endfunction
 :command Headerr :call Headerr()
 
-" All modes in block
-" set guicursor=n-v-c-sm-i-ci-ve-r-cr-o:block
-
-" \-g: rg the word under the cursor
-nnoremap <leader>g :exe "RG " . expand("<cWORD>")<cr>
-
-" next match centered
-nmap n nzz
-nmap N Nzz
-
-" indent cpp with 2 spaces
-autocmd FileType cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-
 set relativenumber
 nnoremap <silent> <S-L> :call ToggleRelativeNumber()<CR>
 function! ToggleRelativeNumber()
@@ -56,12 +49,6 @@ vnoremap p P
 noremap <S-S> ^
 noremap <S-D> $
 
-" disable auto commenting
-autocmd FileType * setlocal formatoptions-=cro
-
-" quick yank all
-nnoremap <C-Y> :%y*<CR>
-
 " fuzzy suggest window navigate
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
@@ -71,7 +58,6 @@ nnoremap <C-Left> gT
 nnoremap <C-Right> gt
 
 " encoding
-"set bomb
 set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
@@ -90,25 +76,20 @@ set ignorecase
 set ruler
 set number
 
-set nowrap
-
-set mouse=a
-
 " auto indentation
-" a tab is <length of doing shiftwidth> % <tabstop>
 set autoindent
-set tabstop=8  " how many columns count as a tab(\t).
-set shiftwidth=8 " how many columns to shift when a TAB key is pressed
+set tabstop=8
+set shiftwidth=8
 
 set wildmenu
 
 " match parenthesis
 set showmatch
-set autoread
 
-" map quick yank
+" map quick copy
 noremap <S-Y> "+y
 
+set mouse=a
 nnoremap <S-W> :call ToggleMouse()<CR>
 function! ToggleMouse()
     if &mouse == 'a'
@@ -120,6 +101,7 @@ function! ToggleMouse()
     endif
 endfunction
 
+set nowrap
 nnoremap <C-W>w :call ToggleWrap()<CR>
 function! ToggleWrap()
 	if (&wrap == 1)
@@ -131,10 +113,9 @@ function! ToggleWrap()
 	endif
 endfunction
 
-" find and replace (press * first)
-nnoremap <Leader>r :%s///g<Left><Left>
-
-" toggle auto command
+" disable auto commenting
+autocmd FileType * setlocal formatoptions-=cro
+" toggle auto commenting
 nnoremap <S-C> :call ToggleComment()<CR>
 function! ToggleComment()
 	if stridx(&formatoptions, 'c') != -1
@@ -166,6 +147,9 @@ inoremap <silent> ßf <C-O>:Files<CR>
 nnoremap <silent> <C-S> :RG<CR>
 " <M-S>s in insert mode
 inoremap <silent> ßs <C-O>:RG<CR>
+
+" \-g: rg the word under the cursor
+nnoremap <leader>g :exe "RG " . expand("<cWORD>")<cr>
 
 " Disable :Rg
 command! -bang Rg call NoRg()
@@ -213,13 +197,12 @@ inoremap <C-A> <Esc>I
 inoremap <C-_> <C-O>u
 inoremap <C-R> <C-O><C-R>
 inoremap <C-K> <C-O>d$
-inoremap <C-D> <Right><backspace>
+inoremap <C-V> <Right><backspace>
 
 " scroll half page
 inoremap <C-U> <C-O><C-U><C-O>zz
-" selection while scrolling
-vnoremap <C-V> <C-D>
-inoremap <C-V> <C-O><C-D><C-O>zz
+inoremap <C-D> <C-O><C-D><C-O>zz
+
 " <M-V> to center a line
 inoremap √ <C-O>zz
 
@@ -268,6 +251,4 @@ inoremap <C-W>s <C-O><C-W>s
 " tabs
 inoremap <C-Left> <C-O>:tabprevious<CR>
 inoremap <C-Right> <C-O>:tabnext<CR>
-
-
 " ==== EMACS KEY BINDINGS END ====
