@@ -52,9 +52,6 @@ endfunction
 " paste without yanking the deleted text
 vnoremap p P
 
-" disable C-X for tmux
-noremap <C-X> <Nop>
-
 " jump to line start/end
 noremap <S-S> ^
 noremap <S-D> $
@@ -225,7 +222,10 @@ inoremap <C-V> <C-O><C-D><C-O>zz
 inoremap √ <C-O>zz
 
 " save
+inoremap <C-X>s <C-O>:w<CR>
 inoremap <C-X><C-S> <C-O>:w<CR>
+" quit
+inoremap <C-X>q <C-O>:q<CR>
 
 " copy & paste
 inoremap <C-SPACE> <C-O>v
