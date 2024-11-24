@@ -251,6 +251,9 @@ inoremap <C-W>s <C-O><C-W>s
 " tabs
 inoremap <C-Left> <C-O>:tabprevious<CR>
 inoremap <C-Right> <C-O>:tabnext<CR>
+
+" C-G as esc in visual mode
+vnoremap <C-G> <Esc>
 " ==== EMACS KEY BINDINGS END ====
 
 " starts VIM in insert mode
