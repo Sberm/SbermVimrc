@@ -13,13 +13,6 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
--- inlay hints
-lspconfig.rust_analyzer.setup({
-    on_attach = function(client, bufnr)
-        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-    end
-})
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
