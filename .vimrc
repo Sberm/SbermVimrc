@@ -159,11 +159,13 @@ let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
 
 " ctrl-e search file (Ctrl-Entry)
 nnoremap <silent> <Leader>f :Files<CR>
+" <M-S>f in insert mode
+inoremap <silent> ßf <C-O>:Files<CR>
 
 " ctrl-s search
 nnoremap <silent> <C-S> :RG<CR>
-" <M-S> in insert mode
-inoremap <silent> ß <C-O>:RG<CR>
+" <M-S>s in insert mode
+inoremap <silent> ßs <C-O>:RG<CR>
 
 " Disable :Rg
 command! -bang Rg call NoRg()
@@ -254,4 +256,18 @@ inoremap µ <C-O>N
 inoremap ø <C-O><C-O>
 " <M-I>
 inoremap ˆ <C-O><C-I>
+
+" windows
+inoremap <C-W>h <C-O><C-W>h
+inoremap <C-W>j <C-O><C-W>j
+inoremap <C-W>k <C-O><C-W>k
+inoremap <C-W>l <C-O><C-W>l
+inoremap <C-W>v <C-O><C-W>v
+inoremap <C-W>s <C-O><C-W>s
+
+" tabs
+inoremap <C-Left> <C-O>:tabprevious<CR>
+inoremap <C-Right> <C-O>:tabnext<CR>
+
+
 " ==== EMACS KEY BINDINGS END ====
