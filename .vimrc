@@ -1,32 +1,3 @@
-" emacs key bindings (put at the bottom because of C-K)
-noremap <C-P> <Up>
-noremap <C-N> <Down>
-noremap <C-B> <Left>
-noremap <C-F> <Right>
-noremap <C-E> $
-noremap <C-A> ^
-" no c-k and c-d for normal
-
-" on mac, use it with "Use Option as Meta Key" OFF, unfortunately it breaks emacs
-" <M-F>
-inoremap ƒ <Right><Esc>wi
-" <M-B>
-inoremap ∫ <Right><Esc>bi
-inoremap <C-P> <Up>
-inoremap <C-N> <Down>
-inoremap <C-B> <Left>
-inoremap <C-F> <Right>
-inoremap <C-E> <Esc>A
-inoremap <C-A> <Esc>I
-inoremap <C-_> <Esc>ui " <C-/> redo
-inoremap <C-R> <Esc><C-R>i
-inoremap <C-K> <Right><Esc>d$
-" instead of C-D
-inoremap <C-X> <Right><backspace>
-" scroll half page
-inoremap <C-U> <Esc><C-U>zzi
-inoremap <C-D> <Esc><C-D>zzi
-
 " syntax highlighting
 syntax on
 
@@ -56,9 +27,6 @@ endfunction
 
 " \-g: rg the word under the cursor
 nnoremap <leader>g :exe "RG " . expand("<cWORD>")<cr>
-
-" emacs save
-inoremap <C-X><C-S> <Esc>:w<CR>i
 
 " next match centered
 nmap n nzz
@@ -189,7 +157,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'jonathanfilip/vim-lucius'
 call plug#end()
 
-" ==== fzf start ====
+" ==== FZF START ====
 
 " ctrl-p to toggle preview window
 let g:fzf_vim = {}
@@ -207,8 +175,7 @@ command! -bang Rg call NoRg()
 function! NoRg()
 	echo "Don't use Rg, use RG instead!"
 endfunction
-
-" ==== fzf end ====
+" ==== FZF END ====
 
 " easy-align plugin
 xmap ga <Plug>(EasyAlign)
@@ -222,3 +189,74 @@ let g:easy_align_delimiters = {
 
 " need to be after vim plug
 colorscheme lucius
+
+" ==== EMACS KEY BINDINGS START ====
+
+" (place at the bottom because of C-K)
+
+" nmaps
+noremap <C-P> <Up>
+noremap <C-N> <Down>
+noremap <C-B> <Left>
+noremap <C-F> <Right>
+noremap <C-E> $
+noremap <C-A> ^
+
+" imaps
+" on mac, use it with "Use Option as Meta Key" OFF, unfortunately it breaks emacs
+" <M-F>
+inoremap ƒ <C-O>w
+" <M-B>
+inoremap ∫ <C-O>b
+" <M-D>
+inoremap ∂ <C-O>de
+inoremap <C-P> <Up>
+inoremap <C-N> <Down>
+inoremap <C-B> <Left>
+inoremap <C-F> <Right>
+inoremap <C-E> <Esc>A
+inoremap <C-A> <Esc>I
+inoremap <C-_> <C-O>u
+inoremap <C-R> <C-O><C-R>
+inoremap <C-K> <C-O>d$
+inoremap <C-D> <Right><backspace>
+
+" scroll half page
+inoremap <C-U> <C-O><C-U><C-O>zz
+" selection while scrolling
+vnoremap <C-V> <C-D>
+inoremap <C-V> <C-O><C-D><C-O>zz
+" <M-V> to center a line
+inoremap √ <C-O>zz
+
+" save
+inoremap <C-X><C-S> <C-O>:w<CR>
+
+" copy & paste
+inoremap <C-SPACE> <C-O>v
+" cut
+vnoremap <C-W> d
+vnoremap <Backspace> "_d
+" <M-W>
+" copy
+vnoremap ∑ y
+" yank
+inoremap <C-Y> <C-O>p
+
+" <M->> <M-<> first line, last line
+inoremap ˘ <C-O>G
+inoremap ¯ <C-O>gg
+
+" searching
+inoremap <C-S> <C-O>/
+" <M-N>
+inoremap ˜ <C-O>n
+" <M-M>
+inoremap µ <C-O>N
+
+" last / next position
+" <M-O>
+inoremap ø <C-O><C-O>
+" <M-I>
+inoremap ˆ <C-O><C-I>
+" ==== EMACS KEY BINDINGS END ====
