@@ -1,4 +1,7 @@
--- use block cursor 
+-- source my old vimrc file
+vim.cmd('source ~/.vimrc')
+
+-- use block cursor
 vim.o.guicursor = 'n-v-c-sm-i-ci-ve-r-cr-o:block'
 
 -- rust analyzer
@@ -16,9 +19,6 @@ lspconfig.rust_analyzer.setup({
         vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
     end
 })
-
--- source my old vimrc file
-vim.cmd("source ~/.vimrc")
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -55,7 +55,10 @@ require("lazy").setup({
         "MunifTanjim/nui.nvim",
         -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
       }
-    }
+    },
+    { 'junegunn/fzf.vim', dependencies = { 'junegunn/fzf' } },
+    { 'junegunn/vim-easy-align' },
+    { 'sberm/vim-lucius' },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -63,3 +66,6 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true, notify = false },
 })
+
+-- after lucius plugin is loaded
+vim.cmd('colorscheme lucius')

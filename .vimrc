@@ -153,14 +153,6 @@ endfunction
 vnoremap < <gv
 vnoremap > >gv
 
-" vim plug
-call plug#begin()
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'sberm/vim-lucius'
-call plug#end()
-
 " ==== FZF START ====
 
 " ctrl-p to toggle preview window
@@ -190,9 +182,6 @@ let g:easy_align_delimiters = {
 \ 	'"': { 'pattern': '"', 'ignore_groups': ['Comment'] },
 \ 	'\': { 'pattern': '\\', }
 \ }
-
-" need to be after vim plug
-colorscheme lucius
 
 " ==== EMACS KEY BINDINGS START ====
 
