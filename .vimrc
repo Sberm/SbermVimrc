@@ -252,3 +252,6 @@ inoremap <C-W>s <C-O><C-W>s
 inoremap <C-Left> <C-O>:tabprevious<CR>
 inoremap <C-Right> <C-O>:tabnext<CR>
 " ==== EMACS KEY BINDINGS END ====
+
+" starts VIM in insert mode
+au BufRead,BufNewFile * startinsert
