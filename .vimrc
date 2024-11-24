@@ -1,3 +1,7 @@
+" to match emacs key bindings' behaviors
+nnoremap <C-U> <C-U>zz
+nnoremap <C-D> <C-D>zz
+
 " syntax highlighting
 syntax on
 
@@ -151,10 +155,10 @@ vnoremap > >gv
 
 " vim plug
 call plug#begin()
-Plug '~/.fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'jonathanfilip/vim-lucius'
+Plug 'sberm/vim-lucius'
 call plug#end()
 
 " ==== FZF START ====
