@@ -246,6 +246,8 @@ inoremap ø <C-O><C-O>
 inoremap ˆ <C-O><C-I>
 
 " windows
+" Nop C-W for it deletes a word
+inoremap <C-W> <Nop>
 inoremap <C-W>h <C-O><C-W>h
 inoremap <C-W>j <C-O><C-W>j
 inoremap <C-W>k <C-O><C-W>k
