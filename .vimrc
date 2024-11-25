@@ -184,8 +184,10 @@ noremap <C-A> ^
 " on mac, use it with "Use Option as Meta Key" OFF, unfortunately it breaks emacs
 " <M-F>
 inoremap ƒ <C-O>w
+vnoremap ƒ w
 " <M-B>
 inoremap ∫ <C-O>b
+vnoremap ∫ b
 " <M-D>
 inoremap ∂ <C-O>de
 inoremap <C-P> <Up>
