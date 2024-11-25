@@ -199,11 +199,11 @@ inoremap <C-A> <Esc>I
 inoremap <C-_> <C-O>u
 inoremap <C-R> <C-O><C-R>
 inoremap <C-K> <C-O>d$
-inoremap <C-V> <Right><backspace>
+inoremap <C-D> <Right><backspace>
 
 " scroll half page
 inoremap <C-U> <C-O><C-U><C-O>zz
-inoremap <C-D> <C-O><C-D><C-O>zz
+inoremap <C-V> <C-O><C-D><C-O>zz
 
 " <M-V> to center a line
 inoremap √ <C-O>zz
