@@ -204,6 +204,8 @@ inoremap <C-D> <Right><backspace>
 " scroll half page
 inoremap <C-U> <C-O><C-U><C-O>zz
 inoremap <C-V> <C-O><C-D><C-O>zz
+vnoremap <C-U> <C-U>zz
+vnoremap <C-V> <C-D>zz
 
 " <M-V> to center a line
 inoremap √ <C-O>zz
