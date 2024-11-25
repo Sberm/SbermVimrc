@@ -222,8 +222,9 @@ vnoremap <Backspace> "_d
 " <M-W>
 " copy
 vnoremap ∑ y
-" yank
+" yank / paste
 inoremap <C-Y> <C-O>p
+vnoremap <C-Y> P
 
 " <M->> <M-<> first line, last line
 inoremap ˘ <C-O>G
