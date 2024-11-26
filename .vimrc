@@ -261,6 +261,11 @@ inoremap <C-Right> <C-O>:tabnext<CR>
 
 " C-G as esc in visual mode
 vnoremap <C-G> <Esc>
+
+" treesitter's incremental selection
+imap ≠ <C-O>≠
+imap ± <C-O>±
+imap – <C-O>–
 " ==== EMACS KEY BINDINGS END ====
 
 " starts VIM in insert mode

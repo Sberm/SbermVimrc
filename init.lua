@@ -52,6 +52,7 @@ require("lazy").setup({
     { 'junegunn/vim-easy-align' },
     { 'sberm/vim-lucius' },
     { 'MattesGroeger/vim-bookmarks' },
+    { 'nvim-treesitter/nvim-treesitter' },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -62,3 +63,16 @@ require("lazy").setup({
 
 -- after lucius plugin is loaded
 vim.cmd('colorscheme lucius')
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "lua", "vim", "markdown", "rust" },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "≠", -- <M-=>
+      node_incremental = "≠",
+      scope_incremental = "±", -- <M-+>
+      node_decremental = "–", -- <M-->
+    },
+  },
+}
