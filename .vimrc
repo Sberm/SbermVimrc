@@ -142,14 +142,17 @@ let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
 nnoremap <silent> <Leader>f :Files<CR>
 " <M-S>f in insert mode
 inoremap <silent> ßf <C-O>:Files<CR>
+inoremap <silent> <M-s>f <C-O>:Files<CR>
 
 " ctrl-s search
 nnoremap <silent> <C-S> :RG<CR>
 " <M-S>s in insert mode
 inoremap <silent> ßs <C-O>:RG<CR>
+inoremap <silent> <M-s>s <C-O>:RG<CR>
 
 " \-g: rg the word under the cursor
 nnoremap <leader>g :exe "RG " . expand("<cWORD>")<cr>
+inoremap <leader>g <C-O>:exe "RG " . expand("<cWORD>")<cr>
 
 " Disable :Rg
 command! -bang Rg call NoRg()
