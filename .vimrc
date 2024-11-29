@@ -140,14 +140,10 @@ let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
 
 " ctrl-e search file (Ctrl-Entry)
 nnoremap <silent> <Leader>f :Files<CR>
-" <M-S>f in insert mode
-inoremap <silent> ßf <C-O>:Files<CR>
 inoremap <silent> <M-s>f <C-O>:Files<CR>
 
 " ctrl-s search
 nnoremap <silent> <C-S> :RG<CR>
-" <M-S>s in insert mode
-inoremap <silent> ßs <C-O>:RG<CR>
 inoremap <silent> <M-s>s <C-O>:RG<CR>
 
 " \-g: rg the word under the cursor
@@ -185,18 +181,10 @@ noremap <C-A> ^
 
 " imaps
 " on mac, use it with "Use Option as Meta Key" OFF, unfortunately it breaks emacs
-" <M-f>
-inoremap ƒ <C-O>w
 inoremap <M-f> <C-O>w
-vnoremap ƒ w
 vnoremap <M-f> w
-" <M-b>
-inoremap ∫ <C-O>b
 inoremap <M-b> <C-O>b
-vnoremap ∫ b
 vnoremap <M-b> b
-" <M-d>
-inoremap ∂ <C-O>de
 inoremap <M-d> <C-O>de
 
 inoremap <C-P> <Up>
@@ -216,8 +204,6 @@ inoremap <C-V> <C-O><C-D><C-O>zz
 vnoremap <C-U> <C-U>zz
 vnoremap <C-V> <C-D>zz
 
-" <M-v> to center a line
-inoremap √ <C-O>zz
 inoremap <M-v> <C-O>zz
 
 " save
@@ -231,35 +217,22 @@ inoremap <C-SPACE> <C-O>v
 " cut
 vnoremap <C-W> d
 vnoremap <Backspace> "_d
-" <M-w>
 " copy
-vnoremap ∑ y
 vnoremap <M-w> y
 " yank / paste
 inoremap <C-Y> <C-O>p
 vnoremap <C-Y> P
 
-" <M->> <M-<> first line, last line
-inoremap ˘ <C-O>G
 inoremap <M->> <C-O>G
-inoremap ¯ <C-O>gg
 inoremap <M-<> <C-O>gg
 
 " searching
 inoremap <C-S> <C-O>/
-" <M-n>
-inoremap ˜ <C-O>n
 inoremap <M-n> <C-O>n
-" <M-m>
-inoremap µ <C-O>N
 inoremap <M-m> <C-O>N
 
 " last / next position
-" <M-o>
-inoremap ø <C-O><C-O>
 inoremap <M-o> <C-O><C-O>
-" <M-i>
-inoremap ˆ <C-O><C-I>
 inoremap <M-i> <C-O><C-I>
 
 " windows
