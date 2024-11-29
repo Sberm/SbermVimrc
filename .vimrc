@@ -182,14 +182,20 @@ noremap <C-A> ^
 
 " imaps
 " on mac, use it with "Use Option as Meta Key" OFF, unfortunately it breaks emacs
-" <M-F>
+" <M-f>
 inoremap ƒ <C-O>w
+inoremap <M-f> <C-O>w
 vnoremap ƒ w
-" <M-B>
+vnoremap <M-f> w
+" <M-b>
 inoremap ∫ <C-O>b
+inoremap <M-b> <C-O>b
 vnoremap ∫ b
-" <M-D>
+vnoremap <M-b> b
+" <M-d>
 inoremap ∂ <C-O>de
+inoremap <M-d> <C-O>de
+
 inoremap <C-P> <Up>
 inoremap <C-N> <Down>
 inoremap <C-B> <Left>
@@ -207,8 +213,9 @@ inoremap <C-V> <C-O><C-D><C-O>zz
 vnoremap <C-U> <C-U>zz
 vnoremap <C-V> <C-D>zz
 
-" <M-V> to center a line
+" <M-v> to center a line
 inoremap √ <C-O>zz
+inoremap <M-v> <C-O>zz
 
 " save
 inoremap <C-X>s <C-O>:w<CR>
@@ -221,29 +228,36 @@ inoremap <C-SPACE> <C-O>v
 " cut
 vnoremap <C-W> d
 vnoremap <Backspace> "_d
-" <M-W>
+" <M-w>
 " copy
 vnoremap ∑ y
+vnoremap <M-w> y
 " yank / paste
 inoremap <C-Y> <C-O>p
 vnoremap <C-Y> P
 
 " <M->> <M-<> first line, last line
 inoremap ˘ <C-O>G
+inoremap <M->> <C-O>G
 inoremap ¯ <C-O>gg
+inoremap <M-<> <C-O>gg
 
 " searching
 inoremap <C-S> <C-O>/
-" <M-N>
+" <M-n>
 inoremap ˜ <C-O>n
-" <M-M>
+inoremap <M-n> <C-O>n
+" <M-m>
 inoremap µ <C-O>N
+inoremap <M-m> <C-O>N
 
 " last / next position
-" <M-O>
+" <M-o>
 inoremap ø <C-O><C-O>
-" <M-I>
+inoremap <M-o> <C-O><C-O>
+" <M-i>
 inoremap ˆ <C-O><C-I>
+inoremap <M-i> <C-O><C-I>
 
 " windows
 " Nop C-W for it deletes a word
@@ -263,9 +277,7 @@ inoremap <C-Right> <C-O>:tabnext<CR>
 vnoremap <C-G> <Esc>
 
 " treesitter's incremental selection
-imap ≠ <C-O>≠
-imap ± <C-O>±
-imap – <C-O>–
+imap <C-L> <C-O><C-L>
 " ==== EMACS KEY BINDINGS END ====
 
 " starts VIM in insert mode
