@@ -32,7 +32,7 @@ function! Hd()
 endfunction
 :command Headerr :call Headerr()
 
-set relativenumber
+set norelativenumber
 nnoremap <silent> <S-L> :call ToggleRelativeNumber()<CR>
 function! ToggleRelativeNumber()
     if &relativenumber == 1
