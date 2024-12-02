@@ -224,7 +224,9 @@ inoremap <C-Y> <C-O>p
 vnoremap <C-Y> P
 
 inoremap <M->> <C-O>G
+vnoremap <M->> G
 inoremap <M-<> <C-O>gg
+vnoremap <M-<> gg
 
 " searching
 inoremap <C-S> <C-O>/
