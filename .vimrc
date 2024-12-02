@@ -211,6 +211,7 @@ inoremap <C-X>s <C-O>:w<CR>
 inoremap <C-X><C-S> <C-O>:w<CR>
 " quit
 inoremap <C-X>q <C-O>:q<CR>
+nnoremap <C-X>q :q<CR>
 
 " copy & paste
 inoremap <C-SPACE> <C-O>v
@@ -231,7 +232,8 @@ vnoremap <M-<> gg
 " searching
 inoremap <C-S> <C-O>/
 inoremap <M-n> <C-O>n
-inoremap <M-m> <C-O>N
+inoremap <M-N> <C-O>N
+inoremap <M-m> <C-O>:noh<CR>
 
 " last / next position
 inoremap <M-o> <C-O><C-O>
