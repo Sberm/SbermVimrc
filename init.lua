@@ -78,7 +78,7 @@ require("lazy").setup({
 vim.cmd('colorscheme lucius')
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "vim", "markdown", "rust" },
+  ensure_installed = { "c", "lua", "vim", "markdown", "rust" , "cpp", "go", "python" },
   incremental_selection = {
     enable = true,
     keymaps = {
