@@ -66,6 +66,7 @@ require("lazy").setup({
     { 'sberm/vim-lucius' },
     { 'MattesGroeger/vim-bookmarks' },
     { 'nvim-treesitter/nvim-treesitter' },
+    { 'numToStr/Comment.nvim' },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -89,3 +90,6 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
+
+-- Comment.nvim setup
+require('Comment').setup()
