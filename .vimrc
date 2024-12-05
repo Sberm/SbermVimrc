@@ -151,7 +151,6 @@ inoremap <silent> <M-s>s <C-O>:RG<CR>
 
 " \-g: rg the word under the cursor
 nnoremap <leader>g :exe "RG " . expand("<cWORD>")<cr>
-inoremap <leader>g <C-O>:exe "RG " . expand("<cWORD>")<cr>
 
 " Disable :Rg
 command! -bang Rg call NoRg()
