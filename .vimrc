@@ -1,3 +1,6 @@
+" block cursor
+set guicursor=n-v-c-sm-i-ci-ve-r-cr-o:block-Cursor
+
 " to match emacs key bindings' behaviors
 nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz

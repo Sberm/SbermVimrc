@@ -1,9 +1,3 @@
--- source my old vimrc file
-vim.cmd('source ~/.vimrc')
-
--- use block cursor
-vim.o.guicursor = 'n-v-c-sm-i-ci-ve-r-cr-o:block'
-
 -- rust analyzer
 local lspconfig = require('lspconfig')
 lspconfig.rust_analyzer.setup {
@@ -93,3 +87,6 @@ require'nvim-treesitter.configs'.setup {
 
 -- Comment.nvim setup
 require('Comment').setup()
+
+-- source my old vimrc file
+vim.cmd('source ~/.vimrc')
