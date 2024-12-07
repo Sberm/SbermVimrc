@@ -1,12 +1,3 @@
--- rust analyzer
-local lspconfig = require('lspconfig')
-lspconfig.rust_analyzer.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-  settings = {
-    ['rust-analyzer'] = {},
-  },
-}
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -59,7 +50,6 @@ require("lazy").setup({
     { 'junegunn/vim-easy-align' },
     { 'sberm/vim-lucius' },
     { 'MattesGroeger/vim-bookmarks' },
-    { 'nvim-treesitter/nvim-treesitter' },
     { 'numToStr/Comment.nvim' },
   },
   -- Configure any other settings here. See the documentation for more details.
@@ -71,19 +61,6 @@ require("lazy").setup({
 
 -- after lucius plugin is loaded
 vim.cmd('colorscheme lucius')
-
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "vim", "markdown", "rust" , "cpp", "go", "python" },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "<C-L>",
-      node_incremental = "<C-L>",
-      scope_incremental = false,
-      node_decremental = false,
-    },
-  },
-}
 
 -- Comment.nvim setup
 require('Comment').setup()
