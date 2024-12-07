@@ -237,8 +237,6 @@ inoremap <M-n> <C-O>n
 inoremap <M-N> <C-O>N
 inoremap <M-m> <C-O>:noh<CR>
 
-inoremap <C-J> <C-O><S-J>
-
 " last / next position
 inoremap <M-o> <C-O><C-O>
 inoremap <M-i> <C-O><C-I>
