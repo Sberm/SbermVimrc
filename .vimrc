@@ -1,3 +1,6 @@
+" overwrite lazyvim's <leader> key setting of space
+let mapleader = "\\"
+
 " block cursor
 set guicursor=n-v-c-sm-i-ci-ve-r-cr-o:block-Cursor
 
@@ -150,7 +153,7 @@ nnoremap <silent> <C-S> :RG<CR>
 inoremap <silent> <M-s>s <C-O>:RG<CR>
 
 " \-g: rg the word under the cursor
-nnoremap <leader>g :exe "RG " . expand("<cWORD>")<cr>
+nnoremap <Leader>g :exe "RG " . expand("<cWORD>")<cr>
 
 " Disable :Rg
 command! -bang Rg call NoRg()
