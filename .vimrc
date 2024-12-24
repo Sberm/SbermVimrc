@@ -226,7 +226,7 @@ vnoremap <Backspace> "_d
 " copy
 vnoremap <M-w> y
 " yank / paste
-inoremap <C-Y> <C-O>p
+inoremap <C-Y> <C-O>P
 vnoremap <C-Y> P
 
 inoremap <M->> <C-O>G
