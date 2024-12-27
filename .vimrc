@@ -1,3 +1,5 @@
+set jumpoptions=stack
+
 " overwrite lazyvim's <leader> key setting of space
 let mapleader = "\\"
 
