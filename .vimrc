@@ -1,3 +1,6 @@
+" for X forwarding of "+ register
+set clipboard=unnamedplus
+
 set jumpoptions=stack
 
 " overwrite lazyvim's <leader> key setting of space
