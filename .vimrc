@@ -43,7 +43,7 @@ function! Hd()
 endfunction
 :command Headerr :call Headerr()
 
-set norelativenumber
+set relativenumber
 nnoremap <silent> <S-L> :call ToggleRelativeNumber()<CR>
 function! ToggleRelativeNumber()
     if &relativenumber == 1
@@ -269,6 +269,3 @@ vnoremap <C-G> <Esc>
 " treesitter's incremental selection
 imap <C-L> <C-O><C-L>
 " ==== EMACS KEY BINDINGS END ====
-
-" starts VIM in insert mode
-au BufRead,BufNewFile * startinsert
