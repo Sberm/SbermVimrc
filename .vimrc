@@ -203,7 +203,7 @@ inoremap <C-B> <Left>
 inoremap <C-F> <Right>
 inoremap <C-E> <Esc>A
 inoremap <C-A> <Esc>I
-inoremap <C-_> <C-O>u
+inoremap <C-X>u <C-O>u
 inoremap <C-R> <C-O><C-R>
 inoremap <C-K> <C-O>d$
 inoremap <C-D> <Right><backspace>
