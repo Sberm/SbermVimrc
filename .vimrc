@@ -249,16 +249,6 @@ inoremap <M-m> <C-O>:noh<CR>
 inoremap <M-o> <C-O><C-O>
 inoremap <M-i> <C-O><C-I>
 
-" windows
-" Nop C-W for it deletes a word
-inoremap <C-W> <Nop>
-inoremap <C-W>h <C-O><C-W>h
-inoremap <C-W>j <C-O><C-W>j
-inoremap <C-W>k <C-O><C-W>k
-inoremap <C-W>l <C-O><C-W>l
-inoremap <C-W>v <C-O><C-W>v
-inoremap <C-W>s <C-O><C-W>s
-
 " tabs
 inoremap <C-Left> <C-O>:tabprevious<CR>
 inoremap <C-Right> <C-O>:tabnext<CR>
