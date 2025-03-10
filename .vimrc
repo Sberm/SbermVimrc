@@ -1,3 +1,6 @@
+" c without copying the text
+vnoremap c "_c
+
 " for X forwarding of "+ register
 set clipboard=unnamedplus
 
