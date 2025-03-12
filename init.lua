@@ -46,7 +46,7 @@ require("lazy").setup({
     },
     { 'junegunn/fzf.vim', dependencies = { 'junegunn/fzf' } },
     { 'junegunn/vim-easy-align' },
-    { 'sberm/vim-lucius' },
+    { 'sberm/vim-lucius' }, -- there is a bug here
     { 'MattesGroeger/vim-bookmarks' },
     { 'nvim-treesitter/nvim-treesitter' },
     { 'numToStr/Comment.nvim' },
