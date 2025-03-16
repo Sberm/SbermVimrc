@@ -26,7 +26,7 @@ syntax on
 " Add header automatically when a .c file is created
 au BufNewFile *.c,*.h,*.cpp call Headerr()
 " indent cpp with 2 spaces
-autocmd FileType cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Insert function comment
 function! FuncComment()
@@ -146,7 +146,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 " ==== FZF START ====
-
 " ctrl-p to toggle preview window
 let g:fzf_vim = {}
 let g:fzf_vim.preview_window = ['hidden','ctrl-p']
@@ -181,8 +180,7 @@ let g:easy_align_delimiters = {
 \ }
 
 " ==== EMACS KEY BINDINGS START ====
-
-" (place at the bottom because of C-K)
+" (placed at the bottom because of C-K)
 
 " nmaps
 noremap <C-P> <Up>
