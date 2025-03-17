@@ -1,4 +1,5 @@
 " c without copying the text
+nnoremap c "_c
 vnoremap c "_c
 
 " for X forwarding of "+ register
