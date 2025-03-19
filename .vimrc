@@ -1,5 +1,4 @@
-" remove bottom status bars
-set laststatus=0
+" no extra line for command
 set cmdheight=0
 
 " c without copying the text

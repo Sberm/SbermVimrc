@@ -46,20 +46,16 @@ require("lazy").setup({
     },
     { 'junegunn/fzf.vim', dependencies = { 'junegunn/fzf' } },
     { 'junegunn/vim-easy-align' },
-    { 'sberm/vim-lucius' }, -- there is a bug here
+    { 'sberm/vim-lucius' },
     { 'MattesGroeger/vim-bookmarks' },
     { 'nvim-treesitter/nvim-treesitter' },
     { 'numToStr/Comment.nvim' },
   },
-  -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "default" } },
   -- automatically check for plugin updates
   checker = { enabled = true, notify = false },
 })
-
--- after lucius plugin is loaded
-vim.cmd('colorscheme lucius')
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "c", "lua", "vim", "markdown", "rust" , "cpp", "go", "python" },
@@ -79,3 +75,5 @@ require('Comment').setup()
 
 -- source my old vimrc file
 vim.cmd('source ~/.vimrc')
+-- theme
+vim.cmd('colorscheme lucius')
