@@ -1,3 +1,7 @@
+" remove bottom status bars
+set laststatus=0
+set cmdheight=0
+
 " c without copying the text
 nnoremap c "_c
 vnoremap c "_c
