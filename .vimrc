@@ -18,7 +18,7 @@ set jumpoptions=stack
 let mapleader = "\\"
 
 " block cursor
-set guicursor=n-v-c-sm-i-ci-ve-r-cr-o:block-Cursor
+set guicursor=n-v-c-sm-ci-ve-r-cr-o:block-Cursor,i:ver50-Cursor-blinkwait50-blinkoff150-blinkon175
 
 " to match emacs key bindings' behaviors
 nnoremap <C-U> <C-U>zz
