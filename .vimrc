@@ -1,3 +1,8 @@
+" use verticle splitting when previewing files
+let g:netrw_preview = 1
+
+" =*=*=*=*=*=*= stable =*=*=*=*=*=*=
+
 " autocomplete window navigation
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
