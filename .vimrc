@@ -179,6 +179,11 @@ inoremap <C-N> <Down>
 inoremap <C-B> <Left>
 inoremap <C-F> <Right>
 
+vnoremap <C-P> <Up>
+vnoremap <C-N> <Down>
+vnoremap <C-B> <Left>
+vnoremap <C-F> <Right>
+
 inoremap <C-E> <Esc>A
 vnoremap <C-E> $
 inoremap <C-A> <Esc>I
@@ -204,9 +209,6 @@ inoremap <M-v> <C-O><C-U><C-O>zz
 inoremap <C-V> <C-O><C-D><C-O>zz
 vnoremap <M-v> <C-U>zz
 vnoremap <C-V> <C-D>zz
-" might as well have them for normal
-nnoremap <M-v> <C-U>zz
-nnoremap <C-V> <C-D>zz
 
 " center
 inoremap <C-L> <C-O>zz
