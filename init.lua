@@ -75,5 +75,3 @@ require('Comment').setup()
 
 -- source my old vimrc file
 vim.cmd('source ~/.vimrc')
--- theme
-vim.cmd('colorscheme lucius')

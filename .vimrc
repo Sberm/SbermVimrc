@@ -1,3 +1,7 @@
+" light theme
+set background=light
+colorscheme lucius
+
 " no extra line for command
 set cmdheight=0
 
