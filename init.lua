@@ -22,28 +22,6 @@ vim.g.mapleader = " "
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    {
-      "nvim-neo-tree/neo-tree.nvim",
-      branch = "v3.x",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-	"nvim-tree/nvim-web-devicons",
-        "MunifTanjim/nui.nvim",
-      },
-      -- switch on neotree when opening a directory
-      init = function()
-      if vim.fn.argc(-1) == 1 then
-        local stat = vim.loop.fs_stat(vim.fn.argv(0))
-        if stat and stat.type == "directory" then
-          require("neo-tree").setup({
-            filesystem = {
-              hijack_netrw_behavior = "open_current",
-            },
-          })
-        end
-      end
-      end,
-    },
     { 'junegunn/fzf.vim', dependencies = { 'junegunn/fzf' } },
     { 'junegunn/vim-easy-align' },
     { 'sberm/vim-lucius' },
