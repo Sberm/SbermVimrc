@@ -1,8 +1,12 @@
+" autocomplete window navigation
+inoremap <C-J> <C-N>
+inoremap <C-K> <C-P>
+
 " light theme
 set background=light
 colorscheme lucius
 
-" no extra line for command
+" no extra line for commands
 set cmdheight=0
 
 " c without copying the text
@@ -17,12 +21,8 @@ set jumpoptions=stack
 " overwrite lazyvim's <leader> key setting of space
 let mapleader = "\\"
 
-" block cursor
-set guicursor=n-v-c-sm-ci-ve-r-cr-o:block-Cursor,i:ver50-Cursor-blinkwait50-blinkoff150-blinkon175
-
-" to match emacs key bindings' behaviors
-nnoremap <C-U> <C-U>zz
-nnoremap <C-D> <C-D>zz
+" block for normal, line for insert
+set gcr=n-v-c-sm-ve-r-cr-o:block-Cursor,ci-i:ver50-Cursor-blinkwait50-blinkoff100-blinkon100
 
 " next match centered
 nmap n nzz
@@ -30,29 +30,6 @@ nmap N Nzz
 
 " syntax highlighting
 syntax on
-
-" Add header automatically when a .c file is created
-au BufNewFile *.c,*.h,*.cpp call Headerr()
-" indent cpp with 2 spaces
-autocmd FileType cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-
-" Insert function comment
-function! FuncComment()
-	:.-1read ~/.funccmt
-endfunction
-:command Fc :call FuncComment()
-
-" Insert a comment template
-function! Comment()
-	:.-1read ~/.cmt
-endfunction
-:command C :call Comment()
-
-" Insert license header
-function! Hd()
-	:.-1read ~/.headerr
-endfunction
-:command Headerr :call Headerr()
 
 set relativenumber
 nnoremap <silent> <S-L> :call ToggleRelativeNumber()<CR>
@@ -71,13 +48,13 @@ vnoremap p P
 noremap <S-S> ^
 noremap <S-D> $
 
-" fuzzy suggest window navigate
-inoremap <C-J> <C-N>
-inoremap <C-K> <C-P>
-
-" arrow key to switch tab
+" tab
+nnoremap <C-T> :tabnew<CR>
+inoremap <C-T> <C-O>:tabnew<CR>
 nnoremap <C-Left> gT
 nnoremap <C-Right> gt
+inoremap <C-Left> gT
+inoremap <C-Right> gt
 
 " encoding
 set fileencoding=utf-8
@@ -87,7 +64,7 @@ set termencoding=utf-8
 " highlight current line
 set cursorline
 
-" use , to duplicate command-line commands (use it with normal)
+" use , to repeat commands (be used with normal)
 nmap , @:
 
 " fix backspace not working
@@ -98,10 +75,14 @@ set ignorecase
 set ruler
 set number
 
-" auto indentation
+" indent
 set autoindent
 set tabstop=8
 set shiftwidth=8
+autocmd FileType c setlocal expandtab tabstop=8 shiftwidth=8 softtabstop=f8
+autocmd FileType go setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType py setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 set wildmenu
 
@@ -112,7 +93,7 @@ set showmatch
 noremap <S-Y> "+y
 
 set mouse=a
-nnoremap <S-W> :call ToggleMouse()<CR>
+nnoremap <S-M> :call ToggleMouse()<CR>
 function! ToggleMouse()
     if &mouse == 'a'
         set mouse=
@@ -124,7 +105,7 @@ function! ToggleMouse()
 endfunction
 
 set nowrap
-nnoremap <C-W>w :call ToggleWrap()<CR>
+nnoremap <S-W>w :call ToggleWrap()<CR>
 function! ToggleWrap()
 	if (&wrap == 1)
 		set nowrap
@@ -137,6 +118,7 @@ endfunction
 
 " disable auto commenting
 autocmd FileType * setlocal formatoptions-=cro
+
 " toggle auto commenting
 nnoremap <S-C> :call ToggleComment()<CR>
 function! ToggleComment()
@@ -153,29 +135,23 @@ endfunction
 vnoremap < <gv
 vnoremap > >gv
 
-" ==== FZF START ====
+" =*=*=*=*=*=*= FZF BINDINGS START =*=*=*=*=*=*=
+" files
+nnoremap <silent> <C-F> :Files<CR>
+" grep
+nnoremap <silent> <C-S> :RG<CR>
+
 " ctrl-p to toggle preview window
 let g:fzf_vim = {}
 let g:fzf_vim.preview_window = ['hidden','ctrl-p']
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
-
-" ctrl-e search file (Ctrl-Entry)
-nnoremap <silent> <Leader>f :Files<CR>
-inoremap <silent> <M-s>f <C-O>:Files<CR>
-
-" ctrl-s search
-nnoremap <silent> <C-S> :RG<CR>
-inoremap <silent> <M-s>s <C-O>:RG<CR>
-
-" \-g: rg the word under the cursor
-nnoremap <Leader>g :exe "RG " . expand("<cWORD>")<cr>
 
 " Disable :Rg
 command! -bang Rg call NoRg()
 function! NoRg()
 	echo "Don't use Rg, use RG instead!"
 endfunction
-" ==== FZF END ====
+" =*=*=*=*=*=*= FZF BINDINGS END =*=*=*=*=*=*=
 
 " easy-align plugin
 xmap ga <Plug>(EasyAlign)
@@ -187,52 +163,56 @@ let g:easy_align_delimiters = {
 \ 	'\': { 'pattern': '\\', }
 \ }
 
-" ==== EMACS KEY BINDINGS START ====
+" =*=*=*=*=*=*= EMACS KEY BINDINGS START =*=*=*=*=*=*=
+
+" on MacOS, use it with "Use Option as Meta Key" OFF, it breaks emacs bindings
 " (placed at the bottom because of C-K)
 
-" nmaps
-noremap <C-P> <Up>
-noremap <C-N> <Down>
-noremap <C-B> <Left>
-noremap <C-F> <Right>
-noremap <C-E> $
-noremap <C-A> ^
-
-" imaps
-" on mac, use it with "Use Option as Meta Key" OFF, unfortunately it breaks emacs
-inoremap <M-f> <C-O>w
-vnoremap <M-f> w
-inoremap <M-b> <C-O>b
-vnoremap <M-b> b
-inoremap <M-d> <C-O>de
-
+" basic cursor navigation
 inoremap <C-P> <Up>
 inoremap <C-N> <Down>
 inoremap <C-B> <Left>
 inoremap <C-F> <Right>
+
 inoremap <C-E> <Esc>A
+vnoremap <C-E> $
 inoremap <C-A> <Esc>I
-inoremap <C-X>u <C-O>u
-inoremap <C-R> <C-O><C-R>
-inoremap <C-K> <C-O>d$
+vnoremap <C-A> ^
+
 inoremap <C-D> <Right><backspace>
 
-" scroll half page
-inoremap <C-U> <C-O><C-U><C-O>zz
-inoremap <C-V> <C-O><C-D><C-O>zz
-vnoremap <C-U> <C-U>zz
-vnoremap <C-V> <C-D>zz
+inoremap <M-f> <C-O>e
+vnoremap <M-f> e
+inoremap <M-b> <C-O>b
+vnoremap <M-b> b
 
-inoremap <M-v> <C-O>zz
+" delete word
+inoremap <M-d> <C-O>de
+
+" undo and redo
+" C-_ is actually C-/
+inoremap <C-_> <C-O>u
+inoremap <C-R> <C-O><C-R>
+
+" scroll half page
+inoremap <M-v> <C-O><C-U><C-O>zz
+inoremap <C-V> <C-O><C-D><C-O>zz
+vnoremap <M-v> <C-U>zz
+vnoremap <C-V> <C-D>zz
+" might as well have them for normal
+nnoremap <M-v> <C-U>zz
+nnoremap <C-V> <C-D>zz
+
+" center
+inoremap <C-L> <C-O>zz
 
 " save
-inoremap <C-X>s <C-O>:w<CR>
 inoremap <C-X><C-S> <C-O>:w<CR>
+
 " quit
 inoremap <C-X>q <C-O>:q<CR>
-nnoremap <C-X>q :q<CR>
 
-" copy & paste
+" select
 inoremap <C-SPACE> <C-O>v
 " cut
 vnoremap <C-W> d
@@ -243,20 +223,11 @@ vnoremap <M-w> y
 inoremap <C-Y> <C-O>P
 vnoremap <C-Y> P
 
+" first & last line
 inoremap <M->> <C-O>G
 vnoremap <M->> G
 inoremap <M-<> <C-O>gg
 vnoremap <M-<> gg
-
-" searching
-inoremap <C-S> <C-O>/
-inoremap <M-n> <C-O>n
-inoremap <M-N> <C-O>N
-inoremap <M-m> <C-O>:noh<CR>
-
-" last / next position
-inoremap <M-o> <C-O><C-O>
-inoremap <M-i> <C-O><C-I>
 
 " tabs
 inoremap <C-Left> <C-O>:tabprevious<CR>
@@ -265,6 +236,6 @@ inoremap <C-Right> <C-O>:tabnext<CR>
 " C-G as esc in visual mode
 vnoremap <C-G> <Esc>
 
-" treesitter's incremental selection
-imap <C-L> <C-O><C-L>
-" ==== EMACS KEY BINDINGS END ====
+" incremental selection
+imap <M-S> <C-O><C-L>
+" =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
