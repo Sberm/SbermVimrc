@@ -1,7 +1,7 @@
+" =*=*=*=*=*=*= stable =*=*=*=*=*=*=
+
 " use verticle splitting when previewing files
 let g:netrw_preview = 1
-
-" =*=*=*=*=*=*= stable =*=*=*=*=*=*=
 
 " autocomplete window navigation
 inoremap <C-J> <C-N>
@@ -10,9 +10,6 @@ inoremap <C-K> <C-P>
 " light theme
 set background=light
 colorscheme lucius
-
-" no extra line for commands
-set cmdheight=0
 
 " c without copying the text
 nnoremap c "_c
