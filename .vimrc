@@ -29,7 +29,7 @@ inoremap <C-K> <C-P>
 nnoremap <C-Left> gT
 nnoremap <C-Right> gt
 
-"colorscheme atlas
+set background=light
 colorscheme lucius
 
 " vim 退出时不清空剪贴板
