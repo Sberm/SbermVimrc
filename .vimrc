@@ -234,6 +234,3 @@ inoremap <C-R> <Esc><C-R>i
 inoremap <C-K> <Esc>d$i
 inoremap <C-D> <Esc>lxi
 inoremap <C-Y> <Esc>pi
-
-" syntax highlighting 
-syntax off
