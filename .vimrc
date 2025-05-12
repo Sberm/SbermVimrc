@@ -8,7 +8,7 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 " light theme
-set background=light
+set background=dark
 colorscheme lucius
 
 " c without copying the text
@@ -142,17 +142,12 @@ vnoremap > >gv
 nnoremap <silent> <C-F> :Files<CR>
 " grep
 nnoremap <silent> <C-S> :RG<CR>
-
+" custom rg arguments
+command! -bang -nargs=* RG call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", 1, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", 1, <bang>0)
 " ctrl-p to toggle preview window
 let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['hidden','ctrl-p']
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
-
-" Disable :Rg
-command! -bang Rg call NoRg()
-function! NoRg()
-	echo "Don't use Rg, use RG instead!"
-endfunction
 " =*=*=*=*=*=*= FZF BINDINGS END =*=*=*=*=*=*=
 
 " easy-align plugin
