@@ -77,7 +77,7 @@ set ignorecase
 set ruler
 set number
 
-" indent
+" indentation
 set autoindent
 set tabstop=8
 set shiftwidth=8
@@ -150,7 +150,7 @@ let g:fzf_vim = {}
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
 " =*=*=*=*=*=*= FZF BINDINGS END =*=*=*=*=*=*=
 
-" easy-align plugin
+" easy align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
@@ -238,6 +238,7 @@ vnoremap <C-G> <Esc>
 " incremental selection
 imap <M-S> <C-O><C-L>
 " =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
+
 " =*=*=*=*=*=*= STABLE END =*=*=*=*=*=*=
 
 " =*=*=*=*=*=*= LUASNIP START =*=*=*=*=*=*=
