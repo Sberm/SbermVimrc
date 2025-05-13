@@ -6,3 +6,5 @@ fi
 
 cp -f init.lua $NVIM_CONFIG
 cp -f .vimrc ~
+
+cp -rf snippets $NVIM_CONFIG

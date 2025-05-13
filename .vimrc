@@ -1,4 +1,4 @@
-" =*=*=*=*=*=*= stable =*=*=*=*=*=*=
+" =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
 
 " use verticle splitting when previewing files
 let g:netrw_preview = 1
@@ -238,3 +238,8 @@ vnoremap <C-G> <Esc>
 " incremental selection
 imap <M-S> <C-O><C-L>
 " =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
+" =*=*=*=*=*=*= STABLE END =*=*=*=*=*=*=
+
+" =*=*=*=*=*=*= LUASNIP START =*=*=*=*=*=*=
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+" =*=*=*=*=*=*= LUASNIP END =*=*=*=*=*=*=

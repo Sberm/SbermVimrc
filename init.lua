@@ -28,6 +28,7 @@ require("lazy").setup({
     { 'MattesGroeger/vim-bookmarks' },
     { 'nvim-treesitter/nvim-treesitter' },
     { 'numToStr/Comment.nvim' },
+    { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" }
   },
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "default" } },
@@ -53,3 +54,6 @@ require('Comment').setup()
 
 -- source my old vimrc file
 vim.cmd('source ~/.vimrc')
+
+-- snippets
+require("luasnip.loaders.from_snipmate").load()
