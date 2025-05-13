@@ -1,4 +1,7 @@
 " =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
+" 's' for speed up
+nnoremap s 5
+vnoremap s 5
 
 " use verticle splitting when previewing files
 let g:netrw_preview = 1
@@ -77,10 +80,10 @@ set ignorecase
 set ruler
 set number
 
-" indentation
+" indentations
 set autoindent
-set tabstop=8
-set shiftwidth=8
+set tabstop=4
+set shiftwidth=4
 autocmd FileType c setlocal noexpandtab tabstop=8 shiftwidth=8 softtabstop=8
 autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
@@ -94,44 +97,8 @@ set showmatch
 " map quick copy
 noremap <S-Y> "+y
 
-set mouse=a
-nnoremap <S-M> :call ToggleMouse()<CR>
-function! ToggleMouse()
-    if &mouse == 'a'
-        set mouse=
-        echo "Mouse OFF"
-    else
-        set mouse=a
-        echo "Mouse ON"
-    endif
-endfunction
-
-set nowrap
-nnoremap <S-W>w :call ToggleWrap()<CR>
-function! ToggleWrap()
-	if (&wrap == 1)
-		set nowrap
-		echo "Wrap OFF"
-	else
-		set wrap
-		echo "Wrap ON"
-	endif
-endfunction
-
 " disable auto commenting
 autocmd FileType * setlocal formatoptions-=cro
-
-" toggle auto commenting
-nnoremap <S-C> :call ToggleComment()<CR>
-function! ToggleComment()
-	if stridx(&formatoptions, 'c') != -1
-		set formatoptions-=cro
-		echo "Auto comment OFF"
-	else
-		set formatoptions+=cro
-		echo "Auto comment ON"
-	endif
-endfunction
 
 " indenting while not losing visual selection
 vnoremap < <gv
@@ -178,12 +145,18 @@ vnoremap <C-F> <Right>
 
 inoremap <C-E> <Esc>A
 vnoremap <C-E> $
+" ctrl + a and ctrl + k are too good, sorry
 inoremap <C-A> <Esc>I
-vnoremap <C-A> ^
+inoremap <C-K> <C-O>d$
+nnoremap <C-K> dd
+" go to the start of the command line
+cnoremap <C-A> <Home>
+cnoremap <C-B> <Left>
+cnoremap <C-F> <Right>
 
 inoremap <C-D> <Right><backspace>
 
-inoremap <M-f> <C-O>e
+inoremap <M-f> <Esc>ea
 vnoremap <M-f> e
 inoremap <M-b> <C-O>b
 vnoremap <M-b> b
@@ -238,6 +211,12 @@ vnoremap <C-G> <Esc>
 " incremental selection
 imap <M-S> <C-O><C-L>
 " =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
+
+" ctrl + arrow keys are good
+inoremap <C-Left> <C-O>b
+inoremap <C-Right> <Esc>ea
+" ctrl + backspace to delete words
+inoremap <C-H> <C-W>
 
 " =*=*=*=*=*=*= STABLE END =*=*=*=*=*=*=
 

@@ -1,0 +1,5 @@
+[OK]The 'go to the start' in the bottom command bar
+[OK]ctrl + a and ctrl + k
+[OK]Revive ctrl + a in 
+[OK]ctrl + backspace to replace ctrl + w
+[OK]Fix next word/previous word
