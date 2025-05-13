@@ -36,16 +36,6 @@ nmap N Nzz
 " syntax highlighting
 syntax on
 
-set relativenumber
-nnoremap <silent> <S-L> :call ToggleRelativeNumber()<CR>
-function! ToggleRelativeNumber()
-    if &relativenumber == 1
-	set norelativenumber
-    else
-	set relativenumber
-    endif
-endfunction
-
 " paste without yanking the deleted text
 vnoremap p P
 
@@ -170,10 +160,10 @@ inoremap <C-_> <C-O>u
 inoremap <C-R> <C-O><C-R>
 
 " scroll half page
-inoremap <M-v> <C-O><C-U><C-O>zz
-inoremap <C-V> <C-O><C-D><C-O>zz
-vnoremap <M-v> <C-U>zz
-vnoremap <C-V> <C-D>zz
+inoremap <C-U> <C-O><C-U><C-O>zz
+inoremap <C-D> <C-O><C-D><C-O>zz
+vnoremap <C-U> <C-U>zz
+vnoremap <C-D> <C-D>zz
 
 " center
 inoremap <C-L> <C-O>zz
