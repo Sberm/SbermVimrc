@@ -1,7 +1,13 @@
 " =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
+" relative line number
+set relativenumber
+
+" no wrapping
 set nowrap
 
+" C-L to center a line
 nnoremap <C-L> zz
+inoremap <C-L> <C-O>zz
 
 " half page centered
 nnoremap <C-U> <C-U>zz
@@ -24,7 +30,7 @@ let g:netrw_preview = 1
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
-" light theme
+" theme
 set background=dark
 colorscheme lucius
 
@@ -40,7 +46,7 @@ set jumpoptions=stack
 " overwrite lazyvim's <leader> key setting of space
 let mapleader = "\\"
 
-" block for normal, line for insert
+" cursor: block for normal, line for insert
 set gcr=n-v-c-sm-ve-r-cr-o:block-Cursor,ci-i:ver50-Cursor-blinkwait50-blinkoff100-blinkon100
 
 " next match centered
@@ -53,17 +59,15 @@ syntax on
 " paste without yanking the deleted text
 vnoremap p P
 
+" NOTE: questionable
 " jump to line start/end
 noremap <S-S> ^
 noremap <S-D> $
 
 " tab
-nnoremap <C-T> :tabnew<CR>
-inoremap <C-T> <C-O>:tabnew<CR>
-nnoremap <C-Left> gT
-nnoremap <C-Right> gt
-inoremap <C-Left> gT
-inoremap <C-Right> gt
+nnoremap t :tabnew<CR>
+nnoremap <TAB> gt
+nnoremap <S-TAB> gT
 
 " encoding
 set fileencoding=utf-8
@@ -73,16 +77,14 @@ set termencoding=utf-8
 " highlight current line
 set cursorline
 
-" use , to repeat commands (be used with normal)
-nmap , @:
-
-" fix backspace not working
+" better backspace
 set backspace=indent,eol,start
 
 set hlsearch
 set ignorecase
 set ruler
 set number
+set wildmenu
 
 " indentations
 set autoindent
@@ -93,13 +95,11 @@ autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType py setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-set wildmenu
-
 " match parenthesis
 set showmatch
 
-" map quick copy
-noremap <S-Y> "+y
+" copy to clipboard
+vnoremap <S-L> "+y
 
 " disable auto commenting
 autocmd FileType * setlocal formatoptions-=cro
@@ -112,16 +112,15 @@ vnoremap > >gv
 " files
 nnoremap <silent> <C-F> :Files<CR>
 " grep
-nnoremap <silent> <C-S> :RG<CR>
+nnoremap <silent> <C-G> :RG<CR>
 " custom rg arguments
 command! -bang -nargs=* RG call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", 1, <bang>0)
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", 1, <bang>0)
-" ctrl-p to toggle preview window
 let g:fzf_vim = {}
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
 " =*=*=*=*=*=*= FZF BINDINGS END =*=*=*=*=*=*=
 
-" easy align
+" =*=*=*=*=*=*= EASYALIGN BINDINGS START =*=*=*=*=*=*=
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
@@ -130,10 +129,31 @@ let g:easy_align_delimiters = {
 \ 	'"': { 'pattern': '"', 'ignore_groups': ['Comment'] },
 \ 	'\': { 'pattern': '\\', }
 \ }
+" =*=*=*=*=*=*= EASYALIGN BINDINGS END =*=*=*=*=*=*=
+
+" =*=*=*=*=*=*= BOOKMARKS BINDINGS START =*=*=*=*=*=*=
+unmap mm
+unmap mi
+unmap mn
+unmap mp
+unmap ma
+unmap mc
+unmap mx
+unmap mkk
+unmap mjj
+unmap mg
+
+nmap m <Plug>BookmarkToggle
+nmap , <Plug>BookmarkNext
+nmap < <Plug>BookmarkPrev
+" =*=*=*=*=*=*= BOOKMARKS BINDINGS END =*=*=*=*=*=*=
+
+" =*=*=*=*=*=*= LUASNIP START =*=*=*=*=*=*=
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+" =*=*=*=*=*=*= LUASNIP END =*=*=*=*=*=*=
 
 " =*=*=*=*=*=*= EMACS KEY BINDINGS START =*=*=*=*=*=*=
-
-" on MacOS, use it with "Use Option as Meta Key" OFF, it breaks emacs bindings
+" on MacOS, use it with "Use Option as Meta Key" OFF, for it breaks emacs bindings
 " (placed at the bottom because of C-K)
 
 " basic cursor navigation
@@ -153,23 +173,24 @@ vnoremap <C-E> $
 inoremap <C-A> <Esc>I
 inoremap <C-K> <C-O>d$
 nnoremap <C-K> dd
-" go to the start of the command line
+
+" command line navigation
 cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 cnoremap <C-F> <Right>
-
-inoremap <C-D> <Right><backspace>
+" C-Backspace
+cnoremap <C-H> <C-W>
 
 inoremap <M-f> <Esc>ea
 vnoremap <M-f> e
 inoremap <M-b> <C-O>b
 vnoremap <M-b> b
 
-" delete word
+" delete a word forward
 inoremap <M-d> <C-O>de
 
 " undo and redo
-" C-_ is actually C-/
+" C-_ is C-/
 inoremap <C-_> <C-O>u
 inoremap <C-R> <C-O><C-R>
 
@@ -179,9 +200,6 @@ inoremap <C-D> <C-O><C-D><C-O>zz
 vnoremap <C-U> <C-U>zz
 vnoremap <C-D> <C-D>zz
 
-" center
-inoremap <C-L> <C-O>zz
-
 " save
 inoremap <C-X><C-S> <C-O>:w<CR>
 
@@ -190,48 +208,33 @@ inoremap <C-X>q <C-O>:q<CR>
 
 " select
 inoremap <C-SPACE> <C-O>v
+
 " cut
 vnoremap <C-W> d
 vnoremap <Backspace> "_d
+
 " copy
 vnoremap <M-w> y
+
 " yank / paste
 inoremap <C-Y> <C-O>P
 vnoremap <C-Y> P
 
-" first & last line
-inoremap <M->> <C-O>G
-vnoremap <M->> G
-inoremap <M-<> <C-O>gg
-vnoremap <M-<> gg
-
-" tabs
-inoremap <C-Left> <C-O>:tabprevious<CR>
-inoremap <C-Right> <C-O>:tabnext<CR>
-
 " C-G as esc in visual mode
 vnoremap <C-G> <Esc>
 
-" incremental selection
-imap <M-S> <C-O><C-L>
 " =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
-
 " ctrl + arrow keys are good
 inoremap <C-Left> <C-O>b
 inoremap <C-Right> <Esc>ea
-" ctrl + backspace to delete words
+" ctrl + backspace to delete a word backward
 inoremap <C-H> <C-W>
 
-" now that C-W is available in Insert mode, map that to window ops
+" C-W is available in Insert mode, map that to window ops
 inoremap <C-W>h <C-O><C-W>h
 inoremap <C-W>j <C-O><C-W>j
 inoremap <C-W>k <C-O><C-W>k
 inoremap <C-W>l <C-O><C-W>l
 inoremap <C-W>v <C-O><C-W>v
 inoremap <C-W>s <C-O><C-W>s
-
 " =*=*=*=*=*=*= STABLE END =*=*=*=*=*=*=
-
-" =*=*=*=*=*=*= LUASNIP START =*=*=*=*=*=*=
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
-" =*=*=*=*=*=*= LUASNIP END =*=*=*=*=*=*=

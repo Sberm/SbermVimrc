@@ -38,8 +38,8 @@ require("lazy").setup({
 -- Comment.nvim setup
 require('Comment').setup()
 
--- source my old vimrc file
-vim.cmd('source ~/.vimrc')
-
 -- snippets
 require("luasnip.loaders.from_snipmate").load()
+
+-- source my old vimrc file
+vim.cmd('source ~/.vimrc')
