@@ -1,5 +1,5 @@
 " =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
-" <C-Left> and <C-Right> in normal mode
+" C-Left and C-Right in normal mode
 nnoremap <C-Left> b
 nnoremap <C-Right> e
 
@@ -148,8 +148,8 @@ unmap mjj
 unmap mg
 
 nmap m <Plug>BookmarkToggle
-nmap , <Plug>BookmarkNext
-nmap < <Plug>BookmarkPrev
+nmap M <Plug>BookmarkNext
+nmap , <Plug>BookmarkPrev
 " =*=*=*=*=*=*= BOOKMARKS BINDINGS END =*=*=*=*=*=*=
 
 " =*=*=*=*=*=*= LUASNIP START =*=*=*=*=*=*=
