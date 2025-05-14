@@ -3,7 +3,7 @@
 nnoremap s 5
 vnoremap s 5
 
-" use verticle splitting when previewing files
+" use vertical splitting when previewing files
 let g:netrw_preview = 1
 
 " autocomplete window navigation
