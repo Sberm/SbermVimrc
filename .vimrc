@@ -1,4 +1,6 @@
 " =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
+set nowrap
+
 nnoremap <C-L> zz
 
 " half page centered
