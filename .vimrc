@@ -1,7 +1,17 @@
 " =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
+" half page centered
+nnoremap <C-U> <C-U>zz
+nnoremap <C-D> <C-D>zz
+
 " 's' for speed up
-nnoremap s 5
-vnoremap s 5
+nnoremap sj 5j
+vnoremap sj 5j
+nnoremap sk 5k
+vnoremap sk 5k
+nnoremap sh 9h
+vnoremap sh 9h
+nnoremap sl 9l
+vnoremap sl 9l
 
 " use vertical splitting when previewing files
 let g:netrw_preview = 1
@@ -207,6 +217,14 @@ inoremap <C-Left> <C-O>b
 inoremap <C-Right> <Esc>ea
 " ctrl + backspace to delete words
 inoremap <C-H> <C-W>
+
+" now that C-W is available in Insert mode, map that to window ops
+inoremap <C-W>h <C-O><C-W>h
+inoremap <C-W>j <C-O><C-W>j
+inoremap <C-W>k <C-O><C-W>k
+inoremap <C-W>l <C-O><C-W>l
+inoremap <C-W>v <C-O><C-W>v
+inoremap <C-W>s <C-O><C-W>s
 
 " =*=*=*=*=*=*= STABLE END =*=*=*=*=*=*=
 
