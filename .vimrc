@@ -8,10 +8,10 @@ nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz
 
 " 's' for speed up
-nnoremap sj 5j
-vnoremap sj 5j
-nnoremap sk 5k
-vnoremap sk 5k
+nnoremap sj 4j
+vnoremap sj 4j
+nnoremap sk 4k
+vnoremap sk 4k
 nnoremap sh 9h
 vnoremap sh 9h
 nnoremap sl 9l
