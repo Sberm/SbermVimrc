@@ -26,7 +26,6 @@ require("lazy").setup({
     { 'junegunn/vim-easy-align' },
     { 'sberm/vim-lucius' },
     { 'MattesGroeger/vim-bookmarks' },
-    { 'nvim-treesitter/nvim-treesitter' },
     { 'numToStr/Comment.nvim' },
     { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" }
   },
@@ -35,19 +34,6 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true, notify = false },
 })
-
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "vim", "markdown", "rust" , "cpp", "go", "python" },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "<C-L>",
-      node_incremental = "<C-L>",
-      scope_incremental = false,
-      node_decremental = false,
-    },
-  },
-}
 
 -- Comment.nvim setup
 require('Comment').setup()

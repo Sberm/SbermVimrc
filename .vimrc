@@ -1,4 +1,6 @@
 " =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
+nnoremap <C-L> zz
+
 " half page centered
 nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz
