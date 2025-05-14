@@ -1,4 +1,8 @@
 " =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
+" <C-Left> and <C-Right> in normal mode
+nnoremap <C-Left> b
+nnoremap <C-Right> e
+
 " relative line number
 set relativenumber
 
