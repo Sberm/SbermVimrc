@@ -69,9 +69,9 @@ noremap <S-S> ^
 noremap <S-D> $
 
 " tab
-nnoremap t :tabnew<CR>
-nnoremap <TAB> gt
-nnoremap <S-TAB> gT
+nnoremap tt :tabnew<CR>
+nnoremap tn gt
+nnoremap tp gT
 
 " encoding
 set fileencoding=utf-8
