@@ -4,3 +4,4 @@
 [OK]ctrl + backspace to replace ctrl + w
 [OK]Fix next word/previous word
 [OK]ctrl + i is not working
+Replace Ctrl + Left/Right with Meta + Left/Right 
