@@ -2,6 +2,18 @@
 " C-Left and C-Right in normal mode
 nnoremap <C-Left> b
 nnoremap <C-Right> e
+" ctrl + backspace to delete a word backward
+inoremap <C-H> <C-W>
+" ctrl + arrow keys are good
+inoremap <C-Left> <C-O>b
+inoremap <C-Right> <Esc>ea
+
+" Same thing for meta as well
+nnoremap <M-Left> b
+nnoremap <M-Right> e
+inoremap <M-BS> <C-W>
+inoremap <M-Left> <C-O>b
+inoremap <M-Right> <Esc>ea
 
 " relative line number
 set relativenumber
@@ -228,11 +240,6 @@ vnoremap <C-Y> P
 vnoremap <C-G> <Esc>
 
 " =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
-" ctrl + arrow keys are good
-inoremap <C-Left> <C-O>b
-inoremap <C-Right> <Esc>ea
-" ctrl + backspace to delete a word backward
-inoremap <C-H> <C-W>
 
 " C-W is available in Insert mode, map that to window ops
 inoremap <C-W>h <C-O><C-W>h
