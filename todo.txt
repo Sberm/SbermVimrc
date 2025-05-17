@@ -5,4 +5,4 @@
 [OK]Fix next word/previous word
 [OK]ctrl + i is not working
 [OK]Replace Ctrl + Left/Right with Meta + Left/Right 
-restore preview feature in fzf.vim
+[OK]restore preview feature in fzf.vim

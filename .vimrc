@@ -130,10 +130,11 @@ nnoremap <silent> <C-F> :Files<CR>
 " grep
 nnoremap <silent> <C-G> :RG<CR>
 " custom rg arguments
-command! -bang -nargs=* RG call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", 1, <bang>0)
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", 1, <bang>0)
+command! -bang -nargs=* RG call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", fzf#vim#with_preview(), <bang>0)
 let g:fzf_vim = {}
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
+let g:fzf_vim.preview_window = ['hidden,up,50%', 'ctrl-p']
 " =*=*=*=*=*=*= FZF BINDINGS END =*=*=*=*=*=*=
 
 " =*=*=*=*=*=*= EASYALIGN BINDINGS START =*=*=*=*=*=*=
