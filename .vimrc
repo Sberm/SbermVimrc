@@ -162,7 +162,7 @@ unmap mg
 
 nmap m <Plug>BookmarkToggle
 nmap M <Plug>BookmarkNext
-nmap , <Plug>BookmarkPrev
+nmap , <Plug>BookmarkAnnotate
 " =*=*=*=*=*=*= BOOKMARKS BINDINGS END =*=*=*=*=*=*=
 
 " =*=*=*=*=*=*= LUASNIP START =*=*=*=*=*=*=
