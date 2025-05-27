@@ -149,15 +149,25 @@ let g:easy_align_delimiters = {
 " =*=*=*=*=*=*= EASYALIGN BINDINGS END =*=*=*=*=*=*=
 
 " =*=*=*=*=*=*= BOOKMARKS BINDINGS START =*=*=*=*=*=*=
+map mm <NOP>
 unmap mm
+map mi <NOP>
 unmap mi
+map mn <NOP>
 unmap mn
+map mp <NOP>
 unmap mp
+map ma <NOP>
 unmap ma
+map mc <NOP>
 unmap mc
+map mx <NOP>
 unmap mx
+map mkk <NOP>
 unmap mkk
+map mjj <NOP>
 unmap mjj
+map mg <NOP>
 unmap mg
 
 nmap m <Plug>BookmarkToggle

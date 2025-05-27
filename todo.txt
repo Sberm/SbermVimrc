@@ -6,4 +6,4 @@
 [OK]ctrl + i is not working
 [OK]Replace Ctrl + Left/Right with Meta + Left/Right 
 [OK]restore preview feature in fzf.vim
-Make vimrc re-sourceable
+[OK]Make vimrc re-sourceable
