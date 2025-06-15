@@ -1,4 +1,7 @@
 " =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
+" jump to the matching angle bracket using '%'
+set matchpairs+=<:>
+
 " C-Left and C-Right in normal mode
 nnoremap <C-Left> b
 nnoremap <C-Right> e
