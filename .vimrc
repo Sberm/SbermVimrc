@@ -91,7 +91,6 @@ nnoremap tp gT
 " encoding
 set fileencoding=utf-8
 set encoding=utf-8
-set termencoding=utf-8
 
 " highlight current line
 set cursorline
