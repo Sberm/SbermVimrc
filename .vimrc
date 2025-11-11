@@ -50,7 +50,7 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 " theme
-set background=dark
+set background=light
 colorscheme lucius
 
 " c without copying the text
