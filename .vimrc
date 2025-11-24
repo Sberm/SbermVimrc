@@ -65,8 +65,7 @@ set jumpoptions=stack
 " overwrite lazyvim's <leader> key setting of space
 let mapleader = "\\"
 
-" cursor: block for normal, line for insert
-set gcr=n-v-c-sm-ve-r-cr-o:block-Cursor,ci-i:ver50-Cursor-blinkwait50-blinkoff100-blinkon100
+set gcr=n-v-c-sm-ve-r-cr-o:block-Cursor-blinkwait0-blinkoff100-blinkon100,ci-i:block-Cursor
 
 " next match centered
 nmap n nzz
