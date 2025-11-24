@@ -223,6 +223,8 @@ vnoremap <C-G> <Esc>
 " M-< M->
 inoremap <M-<> <C-O>gg
 inoremap <M->> <C-O>G
+vnoremap <M-<> gg
+vnoremap <M->> G
 
 " quit
 inoremap <C-Z> <C-O>:q<CR>
