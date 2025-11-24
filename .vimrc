@@ -18,9 +18,6 @@ inoremap <M-BS> <C-W>
 inoremap <M-Left> <C-O>b
 inoremap <M-Right> <Esc>ea
 
-" relative line number
-set relativenumber
-
 " no wrapping
 set nowrap
 
@@ -250,6 +247,15 @@ vnoremap <C-Y> P
 
 " C-G as esc in visual mode
 vnoremap <C-G> <Esc>
+
+" M-< M->
+inoremap <M-<> <C-O>gg
+inoremap <M->> <C-O>G
+
+" quit
+inoremap <C-Z> <C-O>:q<CR>
+" disable C-Z in normal mode
+nnoremap <C-Z> <NOP>
 
 " =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
 
