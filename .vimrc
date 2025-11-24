@@ -85,7 +85,10 @@ noremap <S-S> ^
 noremap <S-D> $
 
 " tab
-nnoremap tt :tabnew<CR>
+nnoremap tt :tab split<CR>
+nnoremap <C-T> :tab split<CR>
+inoremap <C-T> <C-O>:tab split<CR>
+
 nnoremap tn gt
 nnoremap tp gT
 
