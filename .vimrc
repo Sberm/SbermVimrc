@@ -1,4 +1,6 @@
-" =*=*=*=*=*=*= STABLE START =*=*=*=*=*=*=
+" disable C-L in normal mode (too surprising coming off of insert)
+nnoremap <S-L> <NOP>
+
 " jump to the matching angle bracket using '%'
 set matchpairs+=<:>
 
@@ -47,8 +49,10 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 " theme
-set background=light
-colorscheme lucius
+set background=dark
+colorscheme codedark
+" change --INSERT-- mode text color
+highlight ModeMsg ctermfg=Green
 
 " c without copying the text
 nnoremap c "_c
@@ -62,7 +66,7 @@ set jumpoptions=stack
 " overwrite lazyvim's <leader> key setting of space
 let mapleader = "\\"
 
-set gcr=n-v-c-sm-ve-r-cr-o:block-Cursor-blinkwait0-blinkoff100-blinkon100,ci-i:block-Cursor
+set guicursor=n-v-c-sm-ve-r-cr-o:block-Cursor,ci-i:block-Cursor
 
 " next match centered
 nmap n nzz
@@ -146,37 +150,6 @@ let g:easy_align_delimiters = {
 \ }
 " =*=*=*=*=*=*= EASYALIGN BINDINGS END =*=*=*=*=*=*=
 
-" =*=*=*=*=*=*= BOOKMARKS BINDINGS START =*=*=*=*=*=*=
-map mm <NOP>
-unmap mm
-map mi <NOP>
-unmap mi
-map mn <NOP>
-unmap mn
-map mp <NOP>
-unmap mp
-map ma <NOP>
-unmap ma
-map mc <NOP>
-unmap mc
-map mx <NOP>
-unmap mx
-map mkk <NOP>
-unmap mkk
-map mjj <NOP>
-unmap mjj
-map mg <NOP>
-unmap mg
-
-nmap m <Plug>BookmarkToggle
-nmap M <Plug>BookmarkNext
-nmap , <Plug>BookmarkAnnotate
-" =*=*=*=*=*=*= BOOKMARKS BINDINGS END =*=*=*=*=*=*=
-
-" =*=*=*=*=*=*= LUASNIP START =*=*=*=*=*=*=
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
-" =*=*=*=*=*=*= LUASNIP END =*=*=*=*=*=*=
-
 " =*=*=*=*=*=*= EMACS KEY BINDINGS START =*=*=*=*=*=*=
 " on MacOS, use it with "Use Option as Meta Key" OFF, for it breaks emacs bindings
 " (placed at the bottom because of C-K)
@@ -259,11 +232,14 @@ nnoremap <C-Z> <NOP>
 
 " =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
 
-" C-W is available in Insert mode, map that to window ops
+" C-W is available in Insert mode, map that to window ops.
+"
+" Set plain C-W to NOP so I don't need to worry about things
+" getting deleted.
+inoremap <C-W> <NOP>
 inoremap <C-W>h <C-O><C-W>h
 inoremap <C-W>j <C-O><C-W>j
 inoremap <C-W>k <C-O><C-W>k
 inoremap <C-W>l <C-O><C-W>l
 inoremap <C-W>v <C-O><C-W>v
 inoremap <C-W>s <C-O><C-W>s
-" =*=*=*=*=*=*= STABLE END =*=*=*=*=*=*=

@@ -25,9 +25,8 @@ require("lazy").setup({
     { 'junegunn/fzf.vim', dependencies = { 'junegunn/fzf' } },
     { 'junegunn/vim-easy-align' },
     { 'sberm/vim-lucius' },
-    { 'MattesGroeger/vim-bookmarks' },
+	{ 'tomasiser/vim-code-dark' },
     { 'numToStr/Comment.nvim' },
-    { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" }
   },
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "default" } },
@@ -37,9 +36,6 @@ require("lazy").setup({
 
 -- Comment.nvim setup
 require('Comment').setup()
-
--- snippets
-require("luasnip.loaders.from_snipmate").load()
 
 -- source my old vimrc file
 vim.cmd('source ~/.vimrc')
