@@ -1,3 +1,6 @@
+" disable C-H in insert mode (because of C-W H)
+inoremap <C-H> <NOP>
+
 " disable C-L in normal mode (too surprising coming off of insert)
 nnoremap <S-L> <NOP>
 
@@ -7,8 +10,6 @@ set matchpairs+=<:>
 " C-Left and C-Right in normal mode
 nnoremap <C-Left> b
 nnoremap <C-Right> e
-" ctrl + backspace to delete a word backward
-inoremap <C-H> <C-W>
 " ctrl + arrow keys are good
 inoremap <C-Left> <C-O>b
 inoremap <C-Right> <Esc>ea
@@ -176,8 +177,6 @@ nnoremap <C-K> dd
 cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 cnoremap <C-F> <Right>
-" C-Backspace
-cnoremap <C-H> <C-W>
 
 inoremap <M-f> <Esc>ea
 vnoremap <M-f> e
