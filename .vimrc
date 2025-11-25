@@ -76,7 +76,7 @@ set jumpoptions=stack
 " overwrite lazyvim's <leader> key setting of space
 let mapleader = "\\"
 
-set guicursor=n-v-c-sm-ve-r-cr-o:block-Cursor,ci-i:block-Cursor
+set guicursor=n-v-c-sm-ve-r-cr-o:block-Cursor,ci-i:block-Cursor-blinkwait100-blinkon100-blinkoff100
 
 " next match centered
 nmap n nzz
@@ -242,5 +242,4 @@ vnoremap <M->> G
 inoremap <C-Z> <C-O>:q<CR>
 " disable C-Z in normal mode
 nnoremap <C-Z> <NOP>
-
 " =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
