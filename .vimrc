@@ -1,7 +1,16 @@
+" window
+" C-W is available in Insert mode, map that to window ops. Set plain C-W to
+" NOP so I don't need to worry about things getting deleted.
+inoremap <C-W> <NOP>
+inoremap <C-W>h <C-O><C-W>h
+inoremap <C-W>j <C-O><C-W>j
+inoremap <C-W>k <C-O><C-W>k
+inoremap <C-W>l <C-O><C-W>l
+inoremap <C-W>v <C-O><C-W>v
+inoremap <C-W>s <C-O><C-W>s
 " disable C-H in insert mode (because of C-W H)
 inoremap <C-H> <NOP>
-
-" disable C-L in normal mode (too surprising coming off of insert)
+" disable S-L in normal mode (too surprising coming off of insert)
 nnoremap <S-L> <NOP>
 
 " jump to the matching angle bracket using '%'
@@ -235,15 +244,3 @@ inoremap <C-Z> <C-O>:q<CR>
 nnoremap <C-Z> <NOP>
 
 " =*=*=*=*=*=*= EMACS KEY BINDINGS END =*=*=*=*=*=*=
-
-" C-W is available in Insert mode, map that to window ops.
-"
-" Set plain C-W to NOP so I don't need to worry about things
-" getting deleted.
-inoremap <C-W> <NOP>
-inoremap <C-W>h <C-O><C-W>h
-inoremap <C-W>j <C-O><C-W>j
-inoremap <C-W>k <C-O><C-W>k
-inoremap <C-W>l <C-O><C-W>l
-inoremap <C-W>v <C-O><C-W>v
-inoremap <C-W>s <C-O><C-W>s
