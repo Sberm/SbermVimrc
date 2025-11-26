@@ -21,7 +21,7 @@ nnoremap <C-Left> b
 nnoremap <C-Right> e
 " ctrl + arrow keys are good
 inoremap <C-Left> <C-O>b
-inoremap <C-Right> <Esc>ea
+inoremap <C-Right> <C-O>e<C-O>a
 
 " Same thing for meta as well
 nnoremap <M-Left> b
@@ -190,7 +190,7 @@ cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 cnoremap <C-F> <Right>
 
-inoremap <M-f> <Esc>ea
+inoremap <M-f> <C-O>e<C-O>a
 vnoremap <M-f> e
 inoremap <M-b> <C-O>b
 vnoremap <M-b> b
