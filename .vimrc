@@ -225,18 +225,12 @@ vnoremap <Backspace> "_d
 vnoremap <M-w> y
 
 " paste
-inoremap <C-Y> <Esc>:call EmacsPaste()<Esc>a
+" this makes C-Y behave like emacs
+set virtualedit=onemore
+inoremap <C-Y> <C-O>P
 " in visual mode, P means it won't copy the deleted text, but in normal mode,
 " P is different and it means paste before the cursor
 vnoremap <C-Y> P
-
-function EmacsPaste()
-if col('.') == 1
-	norm! P
-else
-	norm! p
-endif
-endfunction
 
 " C-G as esc in visual mode
 vnoremap <C-G> <Esc>
