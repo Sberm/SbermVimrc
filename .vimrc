@@ -183,7 +183,6 @@ vnoremap <C-E> $
 " ctrl + a and ctrl + k are too good, sorry
 inoremap <C-A> <Esc>I
 inoremap <C-K> <C-O>d$
-nnoremap <C-K> dd
 
 " command line navigation
 cnoremap <C-A> <Home>
@@ -225,9 +224,19 @@ vnoremap <Backspace> "_d
 " copy
 vnoremap <M-w> y
 
-" yank / paste
-inoremap <C-Y> <C-O>P
+" paste
+inoremap <C-Y> <Esc>:call EmacsPaste()<Esc>a
+" in visual mode, P means it won't copy the deleted text, but in normal mode,
+" P is different and it means paste before the cursor
 vnoremap <C-Y> P
+
+function EmacsPaste()
+if col('.') == 1
+	norm! P
+else
+	norm! p
+endif
+endfunction
 
 " C-G as esc in visual mode
 vnoremap <C-G> <Esc>
