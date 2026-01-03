@@ -125,6 +125,7 @@ autocmd FileType c setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType py setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType sh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " match parenthesis
 set showmatch
