@@ -59,8 +59,9 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 " theme
-set background=dark
-colorscheme codedark
+colorscheme lucius
+set bg=light
+
 " change --INSERT-- mode text color
 highlight ModeMsg ctermfg=Green
 
