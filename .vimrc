@@ -59,7 +59,7 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 " theme
-colorscheme lucius
+colorscheme vscode
 set bg=light
 
 " change --INSERT-- mode text color
