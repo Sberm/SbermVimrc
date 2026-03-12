@@ -123,11 +123,11 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-autocmd FileType c setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType c setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType py setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType sh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType py setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " match parenthesis
 set showmatch
