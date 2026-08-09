@@ -59,7 +59,12 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 " theme
-colorscheme vscode
+try
+    colorscheme vscode
+catch
+    colorscheme default
+endtry
+
 set bg=light
 
 " change --INSERT-- mode text color
@@ -72,7 +77,11 @@ vnoremap c "_c
 " for X forwarding of "+ register
 set clipboard=unnamedplus
 
-set jumpoptions=stack
+" regular vim doesn't have this option
+try
+    set jumpoptions=stack
+catch
+endtry
 
 " overwrite lazyvim's <leader> key setting of space
 let mapleader = "\\"
