@@ -1,3 +1,13 @@
+" center cursor column-wise
+function! CenterCol()
+  let col = col(".")
+  let width = winwidth(0)
+  let target = max([0, col-(width/2)+1])
+  let dict = {"leftcol": target}
+  call winrestview(dict)
+endfunction
+nnoremap <silent> zc :call CenterCol()<CR>
+
 " window
 " C-W is available in Insert mode, map that to window ops. Set plain C-W to
 " NOP so I don't need to worry about things getting deleted.
