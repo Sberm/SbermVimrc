@@ -139,12 +139,12 @@ set wildmenu
 
 " indentations
 set autoindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=8
+set shiftwidth=8
 set expandtab
-autocmd FileType c setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType c setlocal tabstop=8 shiftwidth=8 softtabstop=8
 autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType cpp setlocal tabstop=8 shiftwidth=8 softtabstop=8
 autocmd FileType py setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
