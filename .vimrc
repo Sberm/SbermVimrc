@@ -75,7 +75,7 @@ catch
     colorscheme default
 endtry
 
-set bg=light
+set bg=dark
 
 " change --INSERT-- mode text color
 highlight ModeMsg ctermfg=Green

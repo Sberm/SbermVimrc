@@ -27,7 +27,7 @@ require("lazy").setup({
   spec = {
     { 'junegunn/fzf.vim', dependencies = { 'junegunn/fzf' } },
     { 'junegunn/vim-easy-align' },
-    { 'sberm/vscode.nvim' },
+    { 'Mofiqul/vscode.nvim' },
     { 'numToStr/Comment.nvim' },
   },
   -- colorscheme that will be used when installing plugins.
