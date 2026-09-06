@@ -144,9 +144,24 @@ set shiftwidth=8
 set expandtab
 autocmd FileType c setlocal tabstop=8 shiftwidth=8 softtabstop=8
 autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType cpp setlocal tabstop=8 shiftwidth=8 softtabstop=8
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType py setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+" if vim doesn't indent correctly, use these to force indentation
+function! CppIndent()
+  set autoindent
+  set tabstop=2
+  set shiftwidth=2
+  set expandtab
+endfunction
+
+function! LinuxIndent()
+  set autoindent
+  set tabstop=8
+  set shiftwidth=8
+  set noexpandtab
+endfunction
 
 " match parenthesis
 set showmatch
