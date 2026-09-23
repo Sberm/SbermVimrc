@@ -1,4 +1,3 @@
-" center cursor column-wise
 function! CenterCol()
   let col = col(".")
   let width = winwidth(0)
@@ -179,14 +178,24 @@ vnoremap > >gv
 " =*=*=*=*=*=*= FZF BINDINGS START =*=*=*=*=*=*=
 " files
 nnoremap <silent> <C-F> :Files<CR>
-" grep
+
+" ripgrep
+function! RipgrepFzf(query)
+  let l:command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let l:initial_command = printf(l:command_fmt, shellescape(a:query))
+  let l:reload_command = printf(l:command_fmt, '{q}')
+  let l:spec = {'options': ['--disabled', '--query', a:query, '--bind', 'change:reload:'.l:reload_command]}
+  call fzf#vim#grep(l:initial_command, 1, fzf#vim#with_preview(l:spec), 0)
+endfunction
+" Command to trigger it (:RG <search_term>)
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>)
+" Shortcut to open the live search
 nnoremap <silent> <C-G> :RG<CR>
-" custom rg arguments
-command! -bang -nargs=* RG call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", fzf#vim#with_preview(), <bang>0)
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --line-number --no-heading --color=always --smart-case .", fzf#vim#with_preview(), <bang>0)
+" install bat to syntax highlight the preview window
+
 let g:fzf_vim = {}
-let g:fzf_layout = { 'window': { 'width': 1, 'height': 1, 'relative': v:true } }
-let g:fzf_vim.preview_window = ['hidden,up,50%', 'ctrl-p']
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8, 'relative': v:true } }
+let g:fzf_vim.preview_window = ['right,50%', 'ctrl-p']
 " =*=*=*=*=*=*= FZF BINDINGS END =*=*=*=*=*=*=
 
 " =*=*=*=*=*=*= EASYALIGN BINDINGS START =*=*=*=*=*=*=
